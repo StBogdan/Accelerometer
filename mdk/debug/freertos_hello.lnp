@@ -1,0 +1,27 @@
+--cpu Cortex-M0+
+"debug\startup_mkl46z4.o"
+"debug\system_mkl46z4.o"
+"debug\port.o"
+"debug\fsl_lpsci.o"
+"debug\fsl_uart.o"
+"debug\fsl_clock.o"
+"debug\fsl_common.o"
+"debug\fsl_gpio.o"
+"debug\fsl_smc.o"
+"debug\fsl_i2c.o"
+"debug\freertos_hello.o"
+"debug\pin_mux.o"
+"debug\board.o"
+"debug\clock_config.o"
+"debug\fsl_debug_console.o"
+"debug\croutine.o"
+"debug\heap_4.o"
+"debug\list.o"
+"debug\queue.o"
+"debug\tasks.o"
+"debug\timers.o"
+"debug\event_groups.o"
+--library_type=microlib --diag_suppress 6314 --strict --scatter "MKL46Z256xxx4_flash.scf"
+--remove --summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\output\freertos_hello.map" -o debug\freertos_hello.out

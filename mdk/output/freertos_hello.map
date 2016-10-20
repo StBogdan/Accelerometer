@@ -1,0 +1,1949 @@
+Component: ARM Compiler 5.06 update 3 (build 300) Tool: armlink [4d35c9]
+
+==============================================================================
+
+Section Cross References
+
+    startup_mkl46z4.o(RESET) refers to startup_mkl46z4.o(.text) for Reset_Handler
+    startup_mkl46z4.o(RESET) refers to port.o(i.SVC_Handler) for SVC_Handler
+    startup_mkl46z4.o(RESET) refers to port.o(.emb_text) for PendSV_Handler
+    startup_mkl46z4.o(RESET) refers to port.o(i.SysTick_Handler) for SysTick_Handler
+    startup_mkl46z4.o(.text) refers to startup_mkl46z4.o(FlashConfig) for FlashConfig
+    startup_mkl46z4.o(.text) refers to startup_mkl46z4.o(RESET) for __Vectors
+    startup_mkl46z4.o(.text) refers to system_mkl46z4.o(i.SystemInit) for SystemInit
+    startup_mkl46z4.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    startup_mkl46z4.o(.text) refers to fsl_i2c.o(i.I2C0_DriverIRQHandler) for I2C0_DriverIRQHandler
+    startup_mkl46z4.o(.text) refers to fsl_i2c.o(i.I2C1_DriverIRQHandler) for I2C1_DriverIRQHandler
+    startup_mkl46z4.o(.text) refers to fsl_lpsci.o(i.UART0_DriverIRQHandler) for UART0_DriverIRQHandler
+    startup_mkl46z4.o(.text) refers to fsl_uart.o(i.UART1_DriverIRQHandler) for UART1_DriverIRQHandler
+    startup_mkl46z4.o(.text) refers to fsl_uart.o(i.UART2_DriverIRQHandler) for UART2_DriverIRQHandler
+    system_mkl46z4.o(i.SystemCoreClockUpdate) refers to uidiv.o(.text) for __aeabi_uidivmod
+    system_mkl46z4.o(i.SystemCoreClockUpdate) refers to system_mkl46z4.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    system_mkl46z4.o(i.SystemCoreClockUpdate) refers to system_mkl46z4.o(.data) for SystemCoreClock
+    port.o(.emb_text) refers to tasks.o(.data) for pxCurrentTCB
+    port.o(.emb_text) refers to tasks.o(i.vTaskSwitchContext) for vTaskSwitchContext
+    port.o(i.SysTick_Handler) refers to port.o(.emb_text) for ulSetInterruptMaskFromISR
+    port.o(i.SysTick_Handler) refers to tasks.o(i.xTaskIncrementTick) for xTaskIncrementTick
+    port.o(i.prvSetupTimerInterrupt) refers to uidiv.o(.text) for __aeabi_uidivmod
+    port.o(i.prvSetupTimerInterrupt) refers to system_mkl46z4.o(.data) for SystemCoreClock
+    port.o(i.prvTaskExitError) refers to port.o(.data) for uxCriticalNesting
+    port.o(i.pxPortInitialiseStack) refers to port.o(i.prvTaskExitError) for prvTaskExitError
+    port.o(i.vPortEndScheduler) refers to port.o(.data) for uxCriticalNesting
+    port.o(i.vPortEnterCritical) refers to port.o(.data) for uxCriticalNesting
+    port.o(i.vPortExitCritical) refers to port.o(.data) for uxCriticalNesting
+    port.o(i.xPortStartScheduler) refers to port.o(i.prvSetupTimerInterrupt) for prvSetupTimerInterrupt
+    port.o(i.xPortStartScheduler) refers to port.o(.emb_text) for __asm___6_port_c_39a90d8d__prvPortStartFirstTask
+    port.o(i.xPortStartScheduler) refers to port.o(.data) for uxCriticalNesting
+    fsl_lpsci.o(i.LPSCI_Deinit) refers to fsl_lpsci.o(i.LPSCI_GetInstance) for LPSCI_GetInstance
+    fsl_lpsci.o(i.LPSCI_Deinit) refers to fsl_lpsci.o(.constdata) for s_lpsciClock
+    fsl_lpsci.o(i.LPSCI_GetDefaultConfig) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_lpsci.o(i.LPSCI_GetInstance) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_lpsci.o(i.LPSCI_GetInstance) refers to fsl_lpsci.o(.constdata) for s_lpsciBases
+    fsl_lpsci.o(i.LPSCI_Init) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_lpsci.o(i.LPSCI_Init) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fsl_lpsci.o(i.LPSCI_Init) refers to fsl_lpsci.o(i.LPSCI_GetInstance) for LPSCI_GetInstance
+    fsl_lpsci.o(i.LPSCI_Init) refers to fsl_lpsci.o(.constdata) for s_lpsciClock
+    fsl_lpsci.o(i.LPSCI_ReadBlocking) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_lpsci.o(i.LPSCI_ReadBlocking) refers to fsl_lpsci.o(i.LPSCI_GetStatusFlags) for LPSCI_GetStatusFlags
+    fsl_lpsci.o(i.LPSCI_ReadBlocking) refers to fsl_lpsci.o(i.LPSCI_ClearStatusFlags) for LPSCI_ClearStatusFlags
+    fsl_lpsci.o(i.LPSCI_ReadNonBlocking) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_lpsci.o(i.LPSCI_SetBaudRate) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_lpsci.o(i.LPSCI_SetBaudRate) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fsl_lpsci.o(i.LPSCI_TransferAbortReceive) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_lpsci.o(i.LPSCI_TransferAbortReceive) refers to fsl_lpsci.o(i.LPSCI_DisableInterrupts) for LPSCI_DisableInterrupts
+    fsl_lpsci.o(i.LPSCI_TransferAbortSend) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_lpsci.o(i.LPSCI_TransferAbortSend) refers to fsl_lpsci.o(i.LPSCI_DisableInterrupts) for LPSCI_DisableInterrupts
+    fsl_lpsci.o(i.LPSCI_TransferCreateHandle) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_lpsci.o(i.LPSCI_TransferCreateHandle) refers to memseta.o(.text) for __aeabi_memclr4
+    fsl_lpsci.o(i.LPSCI_TransferCreateHandle) refers to fsl_lpsci.o(i.LPSCI_GetInstance) for LPSCI_GetInstance
+    fsl_lpsci.o(i.LPSCI_TransferCreateHandle) refers to fsl_lpsci.o(.data) for s_lpsciHandle
+    fsl_lpsci.o(i.LPSCI_TransferCreateHandle) refers to fsl_lpsci.o(i.LPSCI_TransferHandleIRQ) for LPSCI_TransferHandleIRQ
+    fsl_lpsci.o(i.LPSCI_TransferCreateHandle) refers to fsl_lpsci.o(.constdata) for s_lpsciIRQ
+    fsl_lpsci.o(i.LPSCI_TransferGetReceiveCount) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_lpsci.o(i.LPSCI_TransferGetRxRingBufferLength) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_lpsci.o(i.LPSCI_TransferGetSendCount) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_lpsci.o(i.LPSCI_TransferHandleIRQ) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_lpsci.o(i.LPSCI_TransferHandleIRQ) refers to fsl_lpsci.o(i.LPSCI_ReadNonBlocking) for LPSCI_ReadNonBlocking
+    fsl_lpsci.o(i.LPSCI_TransferHandleIRQ) refers to fsl_lpsci.o(i.LPSCI_TransferIsRxRingBufferFull) for LPSCI_TransferIsRxRingBufferFull
+    fsl_lpsci.o(i.LPSCI_TransferHandleIRQ) refers to fsl_lpsci.o(i.LPSCI_DisableInterrupts) for LPSCI_DisableInterrupts
+    fsl_lpsci.o(i.LPSCI_TransferHandleIRQ) refers to fsl_lpsci.o(i.LPSCI_WriteNonBlocking) for LPSCI_WriteNonBlocking
+    fsl_lpsci.o(i.LPSCI_TransferIsRxRingBufferFull) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_lpsci.o(i.LPSCI_TransferIsRxRingBufferFull) refers to fsl_lpsci.o(i.LPSCI_TransferGetRxRingBufferLength) for LPSCI_TransferGetRxRingBufferLength
+    fsl_lpsci.o(i.LPSCI_TransferReceiveNonBlocking) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_lpsci.o(i.LPSCI_TransferReceiveNonBlocking) refers to fsl_lpsci.o(i.LPSCI_TransferGetRxRingBufferLength) for LPSCI_TransferGetRxRingBufferLength
+    fsl_lpsci.o(i.LPSCI_TransferReceiveNonBlocking) refers to fsl_lpsci.o(i.LPSCI_EnableInterrupts) for LPSCI_EnableInterrupts
+    fsl_lpsci.o(i.LPSCI_TransferSendNonBlocking) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_lpsci.o(i.LPSCI_TransferSendNonBlocking) refers to fsl_lpsci.o(i.LPSCI_EnableInterrupts) for LPSCI_EnableInterrupts
+    fsl_lpsci.o(i.LPSCI_TransferStartRingBuffer) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_lpsci.o(i.LPSCI_TransferStartRingBuffer) refers to fsl_lpsci.o(i.LPSCI_EnableInterrupts) for LPSCI_EnableInterrupts
+    fsl_lpsci.o(i.LPSCI_TransferStopRingBuffer) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_lpsci.o(i.LPSCI_TransferStopRingBuffer) refers to fsl_lpsci.o(i.LPSCI_DisableInterrupts) for LPSCI_DisableInterrupts
+    fsl_lpsci.o(i.LPSCI_WriteBlocking) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_lpsci.o(i.LPSCI_WriteNonBlocking) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_lpsci.o(i.UART0_DriverIRQHandler) refers to fsl_lpsci.o(.data) for s_lpsciHandle
+    fsl_uart.o(i.UART1_DriverIRQHandler) refers to fsl_uart.o(.bss) for s_uartHandle
+    fsl_uart.o(i.UART1_DriverIRQHandler) refers to fsl_uart.o(.data) for s_uartIsr
+    fsl_uart.o(i.UART1_RX_TX_DriverIRQHandler) refers to fsl_uart.o(i.UART1_DriverIRQHandler) for UART1_DriverIRQHandler
+    fsl_uart.o(i.UART2_DriverIRQHandler) refers to fsl_uart.o(.bss) for s_uartHandle
+    fsl_uart.o(i.UART2_DriverIRQHandler) refers to fsl_uart.o(.data) for s_uartIsr
+    fsl_uart.o(i.UART2_RX_TX_DriverIRQHandler) refers to fsl_uart.o(i.UART2_DriverIRQHandler) for UART2_DriverIRQHandler
+    fsl_uart.o(i.UART_ClearStatusFlags) refers to fsl_uart.o(i.UART_GetStatusFlags) for UART_GetStatusFlags
+    fsl_uart.o(i.UART_Deinit) refers to fsl_uart.o(i.UART_GetInstance) for UART_GetInstance
+    fsl_uart.o(i.UART_Deinit) refers to fsl_uart.o(.constdata) for s_uartClock
+    fsl_uart.o(i.UART_GetDefaultConfig) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_uart.o(i.UART_GetInstance) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_uart.o(i.UART_GetInstance) refers to fsl_uart.o(.constdata) for s_uartBases
+    fsl_uart.o(i.UART_Init) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_uart.o(i.UART_Init) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fsl_uart.o(i.UART_Init) refers to fsl_uart.o(i.UART_GetInstance) for UART_GetInstance
+    fsl_uart.o(i.UART_Init) refers to fsl_uart.o(.constdata) for s_uartClock
+    fsl_uart.o(i.UART_ReadBlocking) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_uart.o(i.UART_ReadBlocking) refers to fsl_uart.o(i.UART_GetStatusFlags) for UART_GetStatusFlags
+    fsl_uart.o(i.UART_ReadNonBlocking) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_uart.o(i.UART_SetBaudRate) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_uart.o(i.UART_SetBaudRate) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fsl_uart.o(i.UART_TransferAbortReceive) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_uart.o(i.UART_TransferAbortReceive) refers to fsl_uart.o(i.UART_DisableInterrupts) for UART_DisableInterrupts
+    fsl_uart.o(i.UART_TransferAbortSend) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_uart.o(i.UART_TransferAbortSend) refers to fsl_uart.o(i.UART_DisableInterrupts) for UART_DisableInterrupts
+    fsl_uart.o(i.UART_TransferCreateHandle) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_uart.o(i.UART_TransferCreateHandle) refers to memseta.o(.text) for __aeabi_memclr4
+    fsl_uart.o(i.UART_TransferCreateHandle) refers to fsl_uart.o(i.UART_GetInstance) for UART_GetInstance
+    fsl_uart.o(i.UART_TransferCreateHandle) refers to fsl_uart.o(.bss) for s_uartHandle
+    fsl_uart.o(i.UART_TransferCreateHandle) refers to fsl_uart.o(i.UART_TransferHandleIRQ) for UART_TransferHandleIRQ
+    fsl_uart.o(i.UART_TransferCreateHandle) refers to fsl_uart.o(.data) for s_uartIsr
+    fsl_uart.o(i.UART_TransferCreateHandle) refers to fsl_uart.o(.constdata) for s_uartIRQ
+    fsl_uart.o(i.UART_TransferGetReceiveCount) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_uart.o(i.UART_TransferGetRxRingBufferLength) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_uart.o(i.UART_TransferGetSendCount) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_uart.o(i.UART_TransferHandleIRQ) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_uart.o(i.UART_TransferHandleIRQ) refers to fsl_uart.o(i.UART_ReadNonBlocking) for UART_ReadNonBlocking
+    fsl_uart.o(i.UART_TransferHandleIRQ) refers to fsl_uart.o(i.UART_TransferIsRxRingBufferFull) for UART_TransferIsRxRingBufferFull
+    fsl_uart.o(i.UART_TransferHandleIRQ) refers to fsl_uart.o(i.UART_DisableInterrupts) for UART_DisableInterrupts
+    fsl_uart.o(i.UART_TransferHandleIRQ) refers to fsl_uart.o(i.UART_WriteNonBlocking) for UART_WriteNonBlocking
+    fsl_uart.o(i.UART_TransferIsRxRingBufferFull) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_uart.o(i.UART_TransferIsRxRingBufferFull) refers to fsl_uart.o(i.UART_TransferGetRxRingBufferLength) for UART_TransferGetRxRingBufferLength
+    fsl_uart.o(i.UART_TransferReceiveNonBlocking) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_uart.o(i.UART_TransferReceiveNonBlocking) refers to fsl_uart.o(i.UART_TransferGetRxRingBufferLength) for UART_TransferGetRxRingBufferLength
+    fsl_uart.o(i.UART_TransferReceiveNonBlocking) refers to fsl_uart.o(i.UART_EnableInterrupts) for UART_EnableInterrupts
+    fsl_uart.o(i.UART_TransferSendNonBlocking) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_uart.o(i.UART_TransferSendNonBlocking) refers to fsl_uart.o(i.UART_EnableInterrupts) for UART_EnableInterrupts
+    fsl_uart.o(i.UART_TransferStartRingBuffer) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_uart.o(i.UART_TransferStartRingBuffer) refers to fsl_uart.o(i.UART_EnableInterrupts) for UART_EnableInterrupts
+    fsl_uart.o(i.UART_TransferStopRingBuffer) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_uart.o(i.UART_TransferStopRingBuffer) refers to fsl_uart.o(i.UART_DisableInterrupts) for UART_DisableInterrupts
+    fsl_uart.o(i.UART_WriteNonBlocking) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_clock.o(i.CLOCK_BootToBlpeMode) refers to fsl_clock.o(i.CLOCK_SetExternalRefClkConfig) for CLOCK_SetExternalRefClkConfig
+    fsl_clock.o(i.CLOCK_BootToBlpiMode) refers to fsl_clock.o(i.CLOCK_SetInternalRefClkConfig) for CLOCK_SetInternalRefClkConfig
+    fsl_clock.o(i.CLOCK_BootToFeeMode) refers to fsl_clock.o(i.CLOCK_SetExternalRefClkConfig) for CLOCK_SetExternalRefClkConfig
+    fsl_clock.o(i.CLOCK_BootToFeeMode) refers to fsl_clock.o(i.CLOCK_SetFeeMode) for CLOCK_SetFeeMode
+    fsl_clock.o(i.CLOCK_BootToFeiMode) refers to fsl_clock.o(i.CLOCK_SetFeiMode) for CLOCK_SetFeiMode
+    fsl_clock.o(i.CLOCK_BootToPeeMode) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_clock.o(i.CLOCK_BootToPeeMode) refers to fsl_clock.o(i.CLOCK_SetExternalRefClkConfig) for CLOCK_SetExternalRefClkConfig
+    fsl_clock.o(i.CLOCK_BootToPeeMode) refers to fsl_clock.o(i.CLOCK_SetPbeMode) for CLOCK_SetPbeMode
+    fsl_clock.o(i.CLOCK_CalcPllDiv) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fsl_clock.o(i.CLOCK_EnablePll0) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_clock.o(i.CLOCK_GetBusClkFreq) refers to fsl_clock.o(i.CLOCK_GetOutClkFreq) for CLOCK_GetOutClkFreq
+    fsl_clock.o(i.CLOCK_GetBusClkFreq) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fsl_clock.o(i.CLOCK_GetCoreSysClkFreq) refers to fsl_clock.o(i.CLOCK_GetOutClkFreq) for CLOCK_GetOutClkFreq
+    fsl_clock.o(i.CLOCK_GetCoreSysClkFreq) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fsl_clock.o(i.CLOCK_GetEr32kClkFreq) refers to fsl_clock.o(i.CLOCK_GetOsc0ErClkFreq) for CLOCK_GetOsc0ErClkFreq
+    fsl_clock.o(i.CLOCK_GetEr32kClkFreq) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_clock.o(i.CLOCK_GetEr32kClkFreq) refers to fsl_clock.o(.data) for g_xtal32Freq
+    fsl_clock.o(i.CLOCK_GetFixedFreqClkFreq) refers to fsl_clock.o(i.CLOCK_GetFllRefClkFreq) for CLOCK_GetFllRefClkFreq
+    fsl_clock.o(i.CLOCK_GetFixedFreqClkFreq) refers to fsl_clock.o(i.CLOCK_GetOutClkFreq) for CLOCK_GetOutClkFreq
+    fsl_clock.o(i.CLOCK_GetFlashClkFreq) refers to fsl_clock.o(i.CLOCK_GetOutClkFreq) for CLOCK_GetOutClkFreq
+    fsl_clock.o(i.CLOCK_GetFlashClkFreq) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fsl_clock.o(i.CLOCK_GetFllExtRefClkFreq) refers to fsl_clock.o(i.CLOCK_GetMcgExtClkFreq) for CLOCK_GetMcgExtClkFreq
+    fsl_clock.o(i.CLOCK_GetFllExtRefClkFreq) refers to system_mkl46z4.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    fsl_clock.o(i.CLOCK_GetFllExtRefClkFreq) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fsl_clock.o(i.CLOCK_GetFllFreq) refers to fsl_clock.o(i.CLOCK_GetFllRefClkFreq) for CLOCK_GetFllRefClkFreq
+    fsl_clock.o(i.CLOCK_GetFllFreq) refers to fsl_clock.o(.constdata) for fllFactorTable
+    fsl_clock.o(i.CLOCK_GetFllRefClkFreq) refers to fsl_clock.o(i.CLOCK_GetFllExtRefClkFreq) for CLOCK_GetFllExtRefClkFreq
+    fsl_clock.o(i.CLOCK_GetFllRefClkFreq) refers to fsl_clock.o(.data) for s_slowIrcFreq
+    fsl_clock.o(i.CLOCK_GetFreq) refers to system_mkl46z4.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    fsl_clock.o(i.CLOCK_GetFreq) refers to fsl_clock.o(i.CLOCK_GetOutClkFreq) for CLOCK_GetOutClkFreq
+    fsl_clock.o(i.CLOCK_GetFreq) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fsl_clock.o(i.CLOCK_GetFreq) refers to fsl_clock.o(i.CLOCK_GetPllFllSelClkFreq) for CLOCK_GetPllFllSelClkFreq
+    fsl_clock.o(i.CLOCK_GetFreq) refers to fsl_clock.o(i.CLOCK_GetEr32kClkFreq) for CLOCK_GetEr32kClkFreq
+    fsl_clock.o(i.CLOCK_GetFreq) refers to fsl_clock.o(i.CLOCK_GetFixedFreqClkFreq) for CLOCK_GetFixedFreqClkFreq
+    fsl_clock.o(i.CLOCK_GetFreq) refers to fsl_clock.o(i.CLOCK_GetInternalRefClkFreq) for CLOCK_GetInternalRefClkFreq
+    fsl_clock.o(i.CLOCK_GetFreq) refers to fsl_clock.o(i.CLOCK_GetFllFreq) for CLOCK_GetFllFreq
+    fsl_clock.o(i.CLOCK_GetFreq) refers to fsl_clock.o(i.CLOCK_GetPll0Freq) for CLOCK_GetPll0Freq
+    fsl_clock.o(i.CLOCK_GetFreq) refers to fsl_clock.o(i.CLOCK_GetOsc0ErClkFreq) for CLOCK_GetOsc0ErClkFreq
+    fsl_clock.o(i.CLOCK_GetInternalRefClkFreq) refers to fsl_clock.o(i.CLOCK_GetInternalRefClkSelectFreq) for CLOCK_GetInternalRefClkSelectFreq
+    fsl_clock.o(i.CLOCK_GetInternalRefClkSelectFreq) refers to fsl_clock.o(.data) for s_slowIrcFreq
+    fsl_clock.o(i.CLOCK_GetMcgExtClkFreq) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_clock.o(i.CLOCK_GetMcgExtClkFreq) refers to fsl_clock.o(.data) for g_xtal0Freq
+    fsl_clock.o(i.CLOCK_GetOsc0ErClkFreq) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_clock.o(i.CLOCK_GetOsc0ErClkFreq) refers to fsl_clock.o(.data) for g_xtal0Freq
+    fsl_clock.o(i.CLOCK_GetOutClkFreq) refers to fsl_clock.o(i.CLOCK_GetPll0Freq) for CLOCK_GetPll0Freq
+    fsl_clock.o(i.CLOCK_GetOutClkFreq) refers to fsl_clock.o(i.CLOCK_GetFllFreq) for CLOCK_GetFllFreq
+    fsl_clock.o(i.CLOCK_GetOutClkFreq) refers to fsl_clock.o(i.CLOCK_GetInternalRefClkSelectFreq) for CLOCK_GetInternalRefClkSelectFreq
+    fsl_clock.o(i.CLOCK_GetOutClkFreq) refers to fsl_clock.o(i.CLOCK_GetMcgExtClkFreq) for CLOCK_GetMcgExtClkFreq
+    fsl_clock.o(i.CLOCK_GetPlatClkFreq) refers to fsl_clock.o(i.CLOCK_GetOutClkFreq) for CLOCK_GetOutClkFreq
+    fsl_clock.o(i.CLOCK_GetPlatClkFreq) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fsl_clock.o(i.CLOCK_GetPll0Freq) refers to fsl_clock.o(i.CLOCK_GetPll0RefFreq) for CLOCK_GetPll0RefFreq
+    fsl_clock.o(i.CLOCK_GetPll0Freq) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_clock.o(i.CLOCK_GetPll0Freq) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fsl_clock.o(i.CLOCK_GetPll0RefFreq) refers to fsl_clock.o(i.CLOCK_GetMcgExtClkFreq) for CLOCK_GetMcgExtClkFreq
+    fsl_clock.o(i.CLOCK_GetPllFllSelClkFreq) refers to fsl_clock.o(i.CLOCK_GetFllFreq) for CLOCK_GetFllFreq
+    fsl_clock.o(i.CLOCK_GetPllFllSelClkFreq) refers to fsl_clock.o(i.CLOCK_GetPll0Freq) for CLOCK_GetPll0Freq
+    fsl_clock.o(i.CLOCK_InitOsc0) refers to fsl_clock.o(i.CLOCK_GetOscRangeFromFreq) for CLOCK_GetOscRangeFromFreq
+    fsl_clock.o(i.CLOCK_SetMcgConfig) refers to fsl_clock.o(i.CLOCK_SetFeiMode) for CLOCK_SetFeiMode
+    fsl_clock.o(i.CLOCK_SetMcgConfig) refers to fsl_clock.o(i.CLOCK_SetInternalRefClkConfig) for CLOCK_SetInternalRefClkConfig
+    fsl_clock.o(i.CLOCK_SetMcgConfig) refers to fsl_clock.o(i.CLOCK_GetMode) for CLOCK_GetMode
+    fsl_clock.o(i.CLOCK_SetMcgConfig) refers to system_mkl46z4.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    fsl_clock.o(i.CLOCK_SetMcgConfig) refers to fsl_clock.o(i.CLOCK_SetFeeMode) for CLOCK_SetFeeMode
+    fsl_clock.o(i.CLOCK_SetMcgConfig) refers to fsl_clock.o(i.CLOCK_SetFbiMode) for CLOCK_SetFbiMode
+    fsl_clock.o(i.CLOCK_SetMcgConfig) refers to fsl_clock.o(i.CLOCK_SetFbeMode) for CLOCK_SetFbeMode
+    fsl_clock.o(i.CLOCK_SetMcgConfig) refers to fsl_clock.o(i.CLOCK_SetBlpiMode) for CLOCK_SetBlpiMode
+    fsl_clock.o(i.CLOCK_SetMcgConfig) refers to fsl_clock.o(i.CLOCK_SetBlpeMode) for CLOCK_SetBlpeMode
+    fsl_clock.o(i.CLOCK_SetMcgConfig) refers to fsl_clock.o(i.CLOCK_SetPbeMode) for CLOCK_SetPbeMode
+    fsl_clock.o(i.CLOCK_SetMcgConfig) refers to fsl_clock.o(i.CLOCK_SetPeeMode) for CLOCK_SetPeeMode
+    fsl_clock.o(i.CLOCK_SetMcgConfig) refers to fsl_clock.o(i.CLOCK_EnablePll0) for CLOCK_EnablePll0
+    fsl_clock.o(i.CLOCK_SetMcgConfig) refers to fsl_clock.o(i.CLOCK_FllStableDelay) for CLOCK_FllStableDelay
+    fsl_clock.o(i.CLOCK_SetMcgConfig) refers to fsl_clock.o(.constdata) for mcgModeMatrix
+    fsl_clock.o(i.CLOCK_SetPbeMode) refers to fsl_clock.o(i.CLOCK_EnablePll0) for CLOCK_EnablePll0
+    fsl_clock.o(i.CLOCK_TrimInternalRefClk) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fsl_clock.o(i.CLOCK_TrimInternalRefClk) refers to fsl_clock.o(.constdata) for trimRange
+    fsl_clock.o(i.CLOCK_TrimInternalRefClk) refers to fsl_clock.o(.data) for s_fastIrcFreq
+    fsl_common.o(i.__aeabi_assert) refers to fsl_debug_console.o(i.DbgConsole_Printf) for DbgConsole_Printf
+    fsl_gpio.o(i.FGPIO_ClearPinsInterruptFlags) refers to fsl_gpio.o(i.FGPIO_GetInstance) for FGPIO_GetInstance
+    fsl_gpio.o(i.FGPIO_ClearPinsInterruptFlags) refers to fsl_gpio.o(.constdata) for s_portBases
+    fsl_gpio.o(i.FGPIO_GetInstance) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_gpio.o(i.FGPIO_GetInstance) refers to fsl_gpio.o(.constdata) for s_fgpioBases
+    fsl_gpio.o(i.FGPIO_GetPinsInterruptFlags) refers to fsl_gpio.o(i.FGPIO_GetInstance) for FGPIO_GetInstance
+    fsl_gpio.o(i.FGPIO_GetPinsInterruptFlags) refers to fsl_gpio.o(.constdata) for s_portBases
+    fsl_gpio.o(i.FGPIO_PinInit) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_gpio.o(i.GPIO_ClearPinsInterruptFlags) refers to fsl_gpio.o(i.GPIO_GetInstance) for GPIO_GetInstance
+    fsl_gpio.o(i.GPIO_ClearPinsInterruptFlags) refers to fsl_gpio.o(.constdata) for s_portBases
+    fsl_gpio.o(i.GPIO_GetInstance) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_gpio.o(i.GPIO_GetInstance) refers to fsl_gpio.o(.constdata) for s_gpioBases
+    fsl_gpio.o(i.GPIO_GetPinsInterruptFlags) refers to fsl_gpio.o(i.GPIO_GetInstance) for GPIO_GetInstance
+    fsl_gpio.o(i.GPIO_GetPinsInterruptFlags) refers to fsl_gpio.o(.constdata) for s_portBases
+    fsl_gpio.o(i.GPIO_PinInit) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_i2c.o(i.I2C0_DriverIRQHandler) refers to fsl_i2c.o(i.I2C_TransferCommonIRQHandler) for I2C_TransferCommonIRQHandler
+    fsl_i2c.o(i.I2C0_DriverIRQHandler) refers to fsl_i2c.o(.data) for s_i2cHandle
+    fsl_i2c.o(i.I2C1_DriverIRQHandler) refers to fsl_i2c.o(i.I2C_TransferCommonIRQHandler) for I2C_TransferCommonIRQHandler
+    fsl_i2c.o(i.I2C1_DriverIRQHandler) refers to fsl_i2c.o(.data) for s_i2cHandle
+    fsl_i2c.o(i.I2C_GetInstance) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_i2c.o(i.I2C_GetInstance) refers to fsl_i2c.o(.constdata) for s_i2cBases
+    fsl_i2c.o(i.I2C_InitTransferStateMachine) refers to fsl_i2c.o(i.I2C_MasterClearStatusFlags) for I2C_MasterClearStatusFlags
+    fsl_i2c.o(i.I2C_InitTransferStateMachine) refers to fsl_i2c.o(i.I2C_MasterRepeatedStart) for I2C_MasterRepeatedStart
+    fsl_i2c.o(i.I2C_InitTransferStateMachine) refers to fsl_i2c.o(i.I2C_MasterStart) for I2C_MasterStart
+    fsl_i2c.o(i.I2C_MasterDeinit) refers to fsl_i2c.o(i.I2C_Enable) for I2C_Enable
+    fsl_i2c.o(i.I2C_MasterDeinit) refers to fsl_i2c.o(i.I2C_GetInstance) for I2C_GetInstance
+    fsl_i2c.o(i.I2C_MasterDeinit) refers to fsl_i2c.o(i.CLOCK_DisableClock) for CLOCK_DisableClock
+    fsl_i2c.o(i.I2C_MasterDeinit) refers to fsl_i2c.o(.constdata) for s_i2cClocks
+    fsl_i2c.o(i.I2C_MasterGetDefaultConfig) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_i2c.o(i.I2C_MasterInit) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_i2c.o(i.I2C_MasterInit) refers to fsl_i2c.o(i.I2C_GetInstance) for I2C_GetInstance
+    fsl_i2c.o(i.I2C_MasterInit) refers to fsl_i2c.o(i.CLOCK_EnableClock) for CLOCK_EnableClock
+    fsl_i2c.o(i.I2C_MasterInit) refers to fsl_i2c.o(i.I2C_MasterClearStatusFlags) for I2C_MasterClearStatusFlags
+    fsl_i2c.o(i.I2C_MasterInit) refers to fsl_i2c.o(i.I2C_MasterSetBaudRate) for I2C_MasterSetBaudRate
+    fsl_i2c.o(i.I2C_MasterInit) refers to fsl_i2c.o(.constdata) for s_i2cClocks
+    fsl_i2c.o(i.I2C_MasterReadBlocking) refers to fsl_i2c.o(i.I2C_MasterStop) for I2C_MasterStop
+    fsl_i2c.o(i.I2C_MasterRepeatedStart) refers to fsl_i2c.o(i.I2C_MasterGetStatusFlags) for I2C_MasterGetStatusFlags
+    fsl_i2c.o(i.I2C_MasterSetBaudRate) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fsl_i2c.o(i.I2C_MasterSetBaudRate) refers to fsl_i2c.o(.constdata) for s_i2cDividerTable
+    fsl_i2c.o(i.I2C_MasterStart) refers to fsl_i2c.o(i.I2C_MasterGetStatusFlags) for I2C_MasterGetStatusFlags
+    fsl_i2c.o(i.I2C_MasterTransferAbort) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_i2c.o(i.I2C_MasterTransferAbort) refers to fsl_i2c.o(i.I2C_DisableInterrupts) for I2C_DisableInterrupts
+    fsl_i2c.o(i.I2C_MasterTransferBlocking) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_i2c.o(i.I2C_MasterTransferBlocking) refers to fsl_i2c.o(i.I2C_MasterClearStatusFlags) for I2C_MasterClearStatusFlags
+    fsl_i2c.o(i.I2C_MasterTransferBlocking) refers to fsl_i2c.o(i.I2C_MasterRepeatedStart) for I2C_MasterRepeatedStart
+    fsl_i2c.o(i.I2C_MasterTransferBlocking) refers to fsl_i2c.o(i.I2C_MasterStart) for I2C_MasterStart
+    fsl_i2c.o(i.I2C_MasterTransferBlocking) refers to fsl_i2c.o(i.I2C_CheckAndClearError) for I2C_CheckAndClearError
+    fsl_i2c.o(i.I2C_MasterTransferBlocking) refers to fsl_i2c.o(i.I2C_MasterStop) for I2C_MasterStop
+    fsl_i2c.o(i.I2C_MasterTransferBlocking) refers to fsl_i2c.o(i.I2C_MasterWriteBlocking) for I2C_MasterWriteBlocking
+    fsl_i2c.o(i.I2C_MasterTransferBlocking) refers to fsl_i2c.o(i.I2C_MasterReadBlocking) for I2C_MasterReadBlocking
+    fsl_i2c.o(i.I2C_MasterTransferCreateHandle) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_i2c.o(i.I2C_MasterTransferCreateHandle) refers to fsl_i2c.o(i.I2C_GetInstance) for I2C_GetInstance
+    fsl_i2c.o(i.I2C_MasterTransferCreateHandle) refers to memseta.o(.text) for __aeabi_memclr4
+    fsl_i2c.o(i.I2C_MasterTransferCreateHandle) refers to fsl_i2c.o(i.EnableIRQ) for EnableIRQ
+    fsl_i2c.o(i.I2C_MasterTransferCreateHandle) refers to fsl_i2c.o(.data) for s_i2cHandle
+    fsl_i2c.o(i.I2C_MasterTransferCreateHandle) refers to fsl_i2c.o(i.I2C_MasterTransferHandleIRQ) for I2C_MasterTransferHandleIRQ
+    fsl_i2c.o(i.I2C_MasterTransferCreateHandle) refers to fsl_i2c.o(.constdata) for s_i2cIrqs
+    fsl_i2c.o(i.I2C_MasterTransferGetCount) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_i2c.o(i.I2C_MasterTransferHandleIRQ) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_i2c.o(i.I2C_MasterTransferHandleIRQ) refers to fsl_i2c.o(i.I2C_MasterTransferRunStateMachine) for I2C_MasterTransferRunStateMachine
+    fsl_i2c.o(i.I2C_MasterTransferHandleIRQ) refers to fsl_i2c.o(i.I2C_MasterStop) for I2C_MasterStop
+    fsl_i2c.o(i.I2C_MasterTransferHandleIRQ) refers to fsl_i2c.o(i.I2C_DisableInterrupts) for I2C_DisableInterrupts
+    fsl_i2c.o(i.I2C_MasterTransferNonBlocking) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_i2c.o(i.I2C_MasterTransferNonBlocking) refers to fsl_i2c.o(i.I2C_InitTransferStateMachine) for I2C_InitTransferStateMachine
+    fsl_i2c.o(i.I2C_MasterTransferNonBlocking) refers to fsl_i2c.o(i.I2C_EnableInterrupts) for I2C_EnableInterrupts
+    fsl_i2c.o(i.I2C_MasterTransferRunStateMachine) refers to fsl_i2c.o(i.I2C_CheckAndClearError) for I2C_CheckAndClearError
+    fsl_i2c.o(i.I2C_MasterTransferRunStateMachine) refers to fsl_i2c.o(i.I2C_MasterRepeatedStart) for I2C_MasterRepeatedStart
+    fsl_i2c.o(i.I2C_MasterTransferRunStateMachine) refers to fsl_i2c.o(i.I2C_MasterStop) for I2C_MasterStop
+    fsl_i2c.o(i.I2C_SlaveDeinit) refers to fsl_i2c.o(i.I2C_Enable) for I2C_Enable
+    fsl_i2c.o(i.I2C_SlaveDeinit) refers to fsl_i2c.o(i.I2C_GetInstance) for I2C_GetInstance
+    fsl_i2c.o(i.I2C_SlaveDeinit) refers to fsl_i2c.o(i.CLOCK_DisableClock) for CLOCK_DisableClock
+    fsl_i2c.o(i.I2C_SlaveDeinit) refers to fsl_i2c.o(.constdata) for s_i2cClocks
+    fsl_i2c.o(i.I2C_SlaveGetDefaultConfig) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_i2c.o(i.I2C_SlaveInit) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_i2c.o(i.I2C_SlaveInit) refers to fsl_i2c.o(i.I2C_GetInstance) for I2C_GetInstance
+    fsl_i2c.o(i.I2C_SlaveInit) refers to fsl_i2c.o(i.CLOCK_EnableClock) for CLOCK_EnableClock
+    fsl_i2c.o(i.I2C_SlaveInit) refers to fsl_i2c.o(.constdata) for s_i2cClocks
+    fsl_i2c.o(i.I2C_SlaveTransferAbort) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_i2c.o(i.I2C_SlaveTransferAbort) refers to fsl_i2c.o(i.I2C_DisableInterrupts) for I2C_DisableInterrupts
+    fsl_i2c.o(i.I2C_SlaveTransferAbort) refers to memseta.o(.text) for __aeabi_memclr4
+    fsl_i2c.o(i.I2C_SlaveTransferCreateHandle) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_i2c.o(i.I2C_SlaveTransferCreateHandle) refers to fsl_i2c.o(i.I2C_GetInstance) for I2C_GetInstance
+    fsl_i2c.o(i.I2C_SlaveTransferCreateHandle) refers to memseta.o(.text) for __aeabi_memclr4
+    fsl_i2c.o(i.I2C_SlaveTransferCreateHandle) refers to fsl_i2c.o(i.EnableIRQ) for EnableIRQ
+    fsl_i2c.o(i.I2C_SlaveTransferCreateHandle) refers to fsl_i2c.o(.data) for s_i2cHandle
+    fsl_i2c.o(i.I2C_SlaveTransferCreateHandle) refers to fsl_i2c.o(i.I2C_SlaveTransferHandleIRQ) for I2C_SlaveTransferHandleIRQ
+    fsl_i2c.o(i.I2C_SlaveTransferCreateHandle) refers to fsl_i2c.o(.constdata) for s_i2cIrqs
+    fsl_i2c.o(i.I2C_SlaveTransferGetCount) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_i2c.o(i.I2C_SlaveTransferHandleIRQ) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_i2c.o(i.I2C_SlaveTransferHandleIRQ) refers to fsl_i2c.o(i.I2C_MasterGetStatusFlags) for I2C_MasterGetStatusFlags
+    fsl_i2c.o(i.I2C_SlaveTransferHandleIRQ) refers to fsl_i2c.o(i.I2C_MasterClearStatusFlags) for I2C_MasterClearStatusFlags
+    fsl_i2c.o(i.I2C_SlaveTransferNonBlocking) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    fsl_i2c.o(i.I2C_SlaveTransferNonBlocking) refers to fsl_i2c.o(i.I2C_DisableInterrupts) for I2C_DisableInterrupts
+    fsl_i2c.o(i.I2C_SlaveTransferNonBlocking) refers to memseta.o(.text) for __aeabi_memclr4
+    fsl_i2c.o(i.I2C_SlaveTransferNonBlocking) refers to fsl_i2c.o(i.I2C_MasterClearStatusFlags) for I2C_MasterClearStatusFlags
+    fsl_i2c.o(i.I2C_SlaveTransferNonBlocking) refers to fsl_i2c.o(i.I2C_EnableInterrupts) for I2C_EnableInterrupts
+    fsl_i2c.o(i.I2C_SlaveWriteBlocking) refers to fsl_i2c.o(i.I2C_MasterWriteBlocking) for I2C_MasterWriteBlocking
+    fsl_i2c.o(i.I2C_TransferCommonIRQHandler) refers to fsl_i2c.o(.data) for s_i2cMasterIsr
+    freertos_hello.o(i.BOARD_I2C_ReleaseBus) refers to freertos_hello.o(i.PORT_SetPinConfig) for PORT_SetPinConfig
+    freertos_hello.o(i.BOARD_I2C_ReleaseBus) refers to fsl_gpio.o(i.GPIO_PinInit) for GPIO_PinInit
+    freertos_hello.o(i.BOARD_I2C_ReleaseBus) refers to freertos_hello.o(i.GPIO_WritePinOutput) for GPIO_WritePinOutput
+    freertos_hello.o(i.BOARD_I2C_ReleaseBus) refers to freertos_hello.o(i.i2c_release_bus_delay) for i2c_release_bus_delay
+    freertos_hello.o(i.I2C_ReadAccelRegs) refers to memseta.o(.text) for __aeabi_memclr4
+    freertos_hello.o(i.I2C_ReadAccelRegs) refers to fsl_i2c.o(i.I2C_MasterTransferNonBlocking) for I2C_MasterTransferNonBlocking
+    freertos_hello.o(i.I2C_ReadAccelRegs) refers to freertos_hello.o(.bss) for g_m_handle
+    freertos_hello.o(i.I2C_ReadAccelRegs) refers to freertos_hello.o(.data) for nakFlag
+    freertos_hello.o(i.I2C_ReadAccelWhoAmI) refers to fsl_i2c.o(i.I2C_MasterGetDefaultConfig) for I2C_MasterGetDefaultConfig
+    freertos_hello.o(i.I2C_ReadAccelWhoAmI) refers to fsl_clock.o(i.CLOCK_GetFreq) for CLOCK_GetFreq
+    freertos_hello.o(i.I2C_ReadAccelWhoAmI) refers to fsl_i2c.o(i.I2C_MasterInit) for I2C_MasterInit
+    freertos_hello.o(i.I2C_ReadAccelWhoAmI) refers to memseta.o(.text) for __aeabi_memclr4
+    freertos_hello.o(i.I2C_ReadAccelWhoAmI) refers to fsl_i2c.o(i.I2C_MasterTransferNonBlocking) for I2C_MasterTransferNonBlocking
+    freertos_hello.o(i.I2C_ReadAccelWhoAmI) refers to fsl_debug_console.o(i.DbgConsole_Printf) for DbgConsole_Printf
+    freertos_hello.o(i.I2C_ReadAccelWhoAmI) refers to freertos_hello.o(.constdata) for g_accel_address
+    freertos_hello.o(i.I2C_ReadAccelWhoAmI) refers to freertos_hello.o(.bss) for g_m_handle
+    freertos_hello.o(i.I2C_ReadAccelWhoAmI) refers to freertos_hello.o(.data) for nakFlag
+    freertos_hello.o(i.I2C_WriteAccelReg) refers to memseta.o(.text) for __aeabi_memclr4
+    freertos_hello.o(i.I2C_WriteAccelReg) refers to fsl_i2c.o(i.I2C_MasterTransferNonBlocking) for I2C_MasterTransferNonBlocking
+    freertos_hello.o(i.I2C_WriteAccelReg) refers to freertos_hello.o(.bss) for g_m_handle
+    freertos_hello.o(i.I2C_WriteAccelReg) refers to freertos_hello.o(.data) for nakFlag
+    freertos_hello.o(i.PORT_SetPinConfig) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    freertos_hello.o(i.accelerometer_task) refers to fsl_debug_console.o(i.DbgConsole_Printf) for DbgConsole_Printf
+    freertos_hello.o(i.accelerometer_task) refers to fsl_i2c.o(i.I2C_MasterTransferCreateHandle) for I2C_MasterTransferCreateHandle
+    freertos_hello.o(i.accelerometer_task) refers to freertos_hello.o(i.I2C_ReadAccelWhoAmI) for I2C_ReadAccelWhoAmI
+    freertos_hello.o(i.accelerometer_task) refers to freertos_hello.o(i.I2C_WriteAccelReg) for I2C_WriteAccelReg
+    freertos_hello.o(i.accelerometer_task) refers to freertos_hello.o(i.I2C_ReadAccelRegs) for I2C_ReadAccelRegs
+    freertos_hello.o(i.accelerometer_task) refers to tasks.o(i.vTaskDelay) for vTaskDelay
+    freertos_hello.o(i.accelerometer_task) refers to freertos_hello.o(i.i2c_master_callback) for i2c_master_callback
+    freertos_hello.o(i.accelerometer_task) refers to freertos_hello.o(.bss) for g_m_handle
+    freertos_hello.o(i.accelerometer_task) refers to freertos_hello.o(.data) for g_accel_addr_found
+    freertos_hello.o(i.hello_task) refers to fsl_debug_console.o(i.DbgConsole_Printf) for DbgConsole_Printf
+    freertos_hello.o(i.hello_task) refers to tasks.o(i.vTaskDelay) for vTaskDelay
+    freertos_hello.o(i.i2c_master_callback) refers to freertos_hello.o(.data) for completionFlag
+    freertos_hello.o(i.main) refers to pin_mux.o(i.BOARD_InitPins) for BOARD_InitPins
+    freertos_hello.o(i.main) refers to clock_config.o(i.BOARD_BootClockRUN) for BOARD_BootClockRUN
+    freertos_hello.o(i.main) refers to freertos_hello.o(i.BOARD_I2C_ReleaseBus) for BOARD_I2C_ReleaseBus
+    freertos_hello.o(i.main) refers to pin_mux.o(i.BOARD_I2C_ConfigurePins) for BOARD_I2C_ConfigurePins
+    freertos_hello.o(i.main) refers to board.o(i.BOARD_InitDebugConsole) for BOARD_InitDebugConsole
+    freertos_hello.o(i.main) refers to tasks.o(i.xTaskGenericCreate) for xTaskGenericCreate
+    freertos_hello.o(i.main) refers to tasks.o(i.vTaskStartScheduler) for vTaskStartScheduler
+    freertos_hello.o(i.main) refers to freertos_hello.o(i.hello_task) for hello_task
+    freertos_hello.o(i.main) refers to freertos_hello.o(i.accelerometer_task) for accelerometer_task
+    pin_mux.o(i.BOARD_I2C_ConfigurePins) refers to pin_mux.o(i.CLOCK_EnableClock) for CLOCK_EnableClock
+    pin_mux.o(i.BOARD_I2C_ConfigurePins) refers to pin_mux.o(i.PORT_SetPinConfig) for PORT_SetPinConfig
+    pin_mux.o(i.BOARD_InitPins) refers to pin_mux.o(i.CLOCK_EnableClock) for CLOCK_EnableClock
+    pin_mux.o(i.BOARD_InitPins) refers to pin_mux.o(i.PORT_SetPinMux) for PORT_SetPinMux
+    pin_mux.o(i.PORT_SetPinConfig) refers to fsl_common.o(i.__aeabi_assert) for __aeabi_assert
+    board.o(i.BOARD_InitDebugConsole) refers to fsl_clock.o(i.CLOCK_GetCoreSysClkFreq) for CLOCK_GetCoreSysClkFreq
+    board.o(i.BOARD_InitDebugConsole) refers to fsl_debug_console.o(i.DbgConsole_Init) for DbgConsole_Init
+    clock_config.o(i.BOARD_BootClockRUN) refers to fsl_clock.o(i.CLOCK_InitOsc0) for CLOCK_InitOsc0
+    clock_config.o(i.BOARD_BootClockRUN) refers to fsl_clock.o(i.CLOCK_BootToPeeMode) for CLOCK_BootToPeeMode
+    clock_config.o(i.BOARD_BootClockRUN) refers to fsl_clock.o(i.CLOCK_SetInternalRefClkConfig) for CLOCK_SetInternalRefClkConfig
+    clock_config.o(i.BOARD_BootClockRUN) refers to fsl_clock.o(i.CLOCK_SetSimConfig) for CLOCK_SetSimConfig
+    clock_config.o(i.BOARD_BootClockRUN) refers to clock_config.o(.constdata) for g_defaultClockConfigRun
+    clock_config.o(i.BOARD_BootClockRUN) refers to fsl_clock.o(.data) for g_xtal0Freq
+    clock_config.o(i.BOARD_BootClockRUN) refers to system_mkl46z4.o(.data) for SystemCoreClock
+    clock_config.o(i.BOARD_BootClockVLPR) refers to fsl_clock.o(i.CLOCK_BootToBlpiMode) for CLOCK_BootToBlpiMode
+    clock_config.o(i.BOARD_BootClockVLPR) refers to fsl_clock.o(i.CLOCK_SetSimConfig) for CLOCK_SetSimConfig
+    clock_config.o(i.BOARD_BootClockVLPR) refers to fsl_smc.o(i.SMC_SetPowerModeVlpr) for SMC_SetPowerModeVlpr
+    clock_config.o(i.BOARD_BootClockVLPR) refers to clock_config.o(.constdata) for g_defaultClockConfigVlpr
+    clock_config.o(i.BOARD_BootClockVLPR) refers to system_mkl46z4.o(.data) for SystemCoreClock
+    fsl_debug_console.o(i.DbgConsole_ConvertRadixNumToString) refers to idiv.o(.text) for __aeabi_idivmod
+    fsl_debug_console.o(i.DbgConsole_ConvertRadixNumToString) refers to uidiv.o(.text) for __aeabi_uidivmod
+    fsl_debug_console.o(i.DbgConsole_Deinit) refers to fsl_uart.o(i.UART_Deinit) for UART_Deinit
+    fsl_debug_console.o(i.DbgConsole_Deinit) refers to fsl_lpsci.o(i.LPSCI_Deinit) for LPSCI_Deinit
+    fsl_debug_console.o(i.DbgConsole_Deinit) refers to fsl_debug_console.o(.bss) for s_debugConsole
+    fsl_debug_console.o(i.DbgConsole_Getchar) refers to fsl_debug_console.o(.bss) for s_debugConsole
+    fsl_debug_console.o(i.DbgConsole_Init) refers to fsl_uart.o(i.UART_GetDefaultConfig) for UART_GetDefaultConfig
+    fsl_debug_console.o(i.DbgConsole_Init) refers to fsl_uart.o(i.UART_Init) for UART_Init
+    fsl_debug_console.o(i.DbgConsole_Init) refers to fsl_lpsci.o(i.LPSCI_GetDefaultConfig) for LPSCI_GetDefaultConfig
+    fsl_debug_console.o(i.DbgConsole_Init) refers to fsl_lpsci.o(i.LPSCI_Init) for LPSCI_Init
+    fsl_debug_console.o(i.DbgConsole_Init) refers to fsl_debug_console.o(.bss) for s_debugConsole
+    fsl_debug_console.o(i.DbgConsole_Init) refers to fsl_uart.o(i.UART_WriteBlocking) for UART_WriteBlocking
+    fsl_debug_console.o(i.DbgConsole_Init) refers to fsl_uart.o(i.UART_ReadBlocking) for UART_ReadBlocking
+    fsl_debug_console.o(i.DbgConsole_Init) refers to fsl_lpsci.o(i.LPSCI_WriteBlocking) for LPSCI_WriteBlocking
+    fsl_debug_console.o(i.DbgConsole_Init) refers to fsl_lpsci.o(i.LPSCI_ReadBlocking) for LPSCI_ReadBlocking
+    fsl_debug_console.o(i.DbgConsole_Printf) refers to fsl_debug_console.o(i.DbgConsole_PrintfFormattedData) for DbgConsole_PrintfFormattedData
+    fsl_debug_console.o(i.DbgConsole_Printf) refers to fsl_debug_console.o(.bss) for s_debugConsole
+    fsl_debug_console.o(i.DbgConsole_Printf) refers to fsl_debug_console.o(i.DbgConsole_Putchar) for DbgConsole_Putchar
+    fsl_debug_console.o(i.DbgConsole_PrintfFormattedData) refers to fsl_debug_console.o(i.DbgConsole_ConvertRadixNumToString) for DbgConsole_ConvertRadixNumToString
+    fsl_debug_console.o(i.DbgConsole_PrintfFormattedData) refers to fsl_debug_console.o(i.DbgConsole_PrintfPaddingCharacter) for DbgConsole_PrintfPaddingCharacter
+    fsl_debug_console.o(i.DbgConsole_PrintfFormattedData) refers to strlen.o(.text) for strlen
+    fsl_debug_console.o(i.DbgConsole_Putchar) refers to fsl_debug_console.o(.bss) for s_debugConsole
+    fsl_debug_console.o(i.DbgConsole_Scanf) refers to fsl_debug_console.o(i.DbgConsole_Getchar) for DbgConsole_Getchar
+    fsl_debug_console.o(i.DbgConsole_Scanf) refers to fsl_debug_console.o(i.DbgConsole_ScanfFormattedData) for DbgConsole_ScanfFormattedData
+    fsl_debug_console.o(i.DbgConsole_Scanf) refers to fsl_debug_console.o(.bss) for s_debugConsole
+    fsl_debug_console.o(i.DbgConsole_ScanfFormattedData) refers to fsl_debug_console.o(i.DbgConsole_ScanIgnoreWhiteSpace) for DbgConsole_ScanIgnoreWhiteSpace
+    fsl_debug_console.o(i.DbgConsole_ScanfFormattedData) refers to system_mkl46z4.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    fsl_debug_console.o(i.fgetc) refers to fsl_debug_console.o(.bss) for s_debugConsole
+    fsl_debug_console.o(i.fputc) refers to fsl_debug_console.o(.bss) for s_debugConsole
+    heap_4.o(i.prvHeapInit) refers to heap_4.o(.bss) for ucHeap
+    heap_4.o(i.prvHeapInit) refers to heap_4.o(.data) for xStart
+    heap_4.o(i.prvInsertBlockIntoFreeList) refers to heap_4.o(.data) for xStart
+    heap_4.o(i.pvPortMalloc) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    heap_4.o(i.pvPortMalloc) refers to heap_4.o(i.prvHeapInit) for prvHeapInit
+    heap_4.o(i.pvPortMalloc) refers to heap_4.o(i.prvInsertBlockIntoFreeList) for prvInsertBlockIntoFreeList
+    heap_4.o(i.pvPortMalloc) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    heap_4.o(i.pvPortMalloc) refers to heap_4.o(.data) for pxEnd
+    heap_4.o(i.vPortFree) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    heap_4.o(i.vPortFree) refers to heap_4.o(i.prvInsertBlockIntoFreeList) for prvInsertBlockIntoFreeList
+    heap_4.o(i.vPortFree) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    heap_4.o(i.vPortFree) refers to heap_4.o(.data) for xBlockAllocatedBit
+    heap_4.o(i.xPortGetFreeHeapSize) refers to heap_4.o(.data) for xFreeBytesRemaining
+    heap_4.o(i.xPortGetMinimumEverFreeHeapSize) refers to heap_4.o(.data) for xMinimumEverFreeBytesRemaining
+    queue.o(i.prvCopyDataFromQueue) refers to memcpya.o(.text) for __aeabi_memcpy
+    queue.o(i.prvCopyDataToQueue) refers to tasks.o(i.xTaskPriorityDisinherit) for xTaskPriorityDisinherit
+    queue.o(i.prvCopyDataToQueue) refers to memcpya.o(.text) for __aeabi_memcpy
+    queue.o(i.prvIsQueueEmpty) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    queue.o(i.prvIsQueueEmpty) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    queue.o(i.prvIsQueueFull) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    queue.o(i.prvIsQueueFull) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    queue.o(i.prvUnlockQueue) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    queue.o(i.prvUnlockQueue) refers to tasks.o(i.xTaskRemoveFromEventList) for xTaskRemoveFromEventList
+    queue.o(i.prvUnlockQueue) refers to tasks.o(i.vTaskMissedYield) for vTaskMissedYield
+    queue.o(i.prvUnlockQueue) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    queue.o(i.uxQueueMessagesWaiting) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    queue.o(i.uxQueueMessagesWaiting) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    queue.o(i.uxQueueSpacesAvailable) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    queue.o(i.uxQueueSpacesAvailable) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    queue.o(i.vQueueAddToRegistry) refers to queue.o(.bss) for xQueueRegistry
+    queue.o(i.vQueueDelete) refers to queue.o(i.vQueueUnregisterQueue) for vQueueUnregisterQueue
+    queue.o(i.vQueueDelete) refers to heap_4.o(i.vPortFree) for vPortFree
+    queue.o(i.vQueueUnregisterQueue) refers to queue.o(.bss) for xQueueRegistry
+    queue.o(i.vQueueWaitForMessageRestricted) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    queue.o(i.vQueueWaitForMessageRestricted) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    queue.o(i.vQueueWaitForMessageRestricted) refers to tasks.o(i.vTaskPlaceOnEventListRestricted) for vTaskPlaceOnEventListRestricted
+    queue.o(i.vQueueWaitForMessageRestricted) refers to queue.o(i.prvUnlockQueue) for prvUnlockQueue
+    queue.o(i.xQueueCreateCountingSemaphore) refers to queue.o(i.xQueueGenericCreate) for xQueueGenericCreate
+    queue.o(i.xQueueCreateMutex) refers to heap_4.o(i.pvPortMalloc) for pvPortMalloc
+    queue.o(i.xQueueCreateMutex) refers to list.o(i.vListInitialise) for vListInitialise
+    queue.o(i.xQueueCreateMutex) refers to queue.o(i.xQueueGenericSend) for xQueueGenericSend
+    queue.o(i.xQueueGenericCreate) refers to heap_4.o(i.pvPortMalloc) for pvPortMalloc
+    queue.o(i.xQueueGenericCreate) refers to queue.o(i.xQueueGenericReset) for xQueueGenericReset
+    queue.o(i.xQueueGenericReceive) refers to tasks.o(i.xTaskGetSchedulerState) for xTaskGetSchedulerState
+    queue.o(i.xQueueGenericReceive) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    queue.o(i.xQueueGenericReceive) refers to queue.o(i.prvCopyDataFromQueue) for prvCopyDataFromQueue
+    queue.o(i.xQueueGenericReceive) refers to tasks.o(i.pvTaskIncrementMutexHeldCount) for pvTaskIncrementMutexHeldCount
+    queue.o(i.xQueueGenericReceive) refers to tasks.o(i.xTaskRemoveFromEventList) for xTaskRemoveFromEventList
+    queue.o(i.xQueueGenericReceive) refers to port.o(i.vPortYield) for vPortYield
+    queue.o(i.xQueueGenericReceive) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    queue.o(i.xQueueGenericReceive) refers to tasks.o(i.vTaskSetTimeOutState) for vTaskSetTimeOutState
+    queue.o(i.xQueueGenericReceive) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    queue.o(i.xQueueGenericReceive) refers to tasks.o(i.xTaskCheckForTimeOut) for xTaskCheckForTimeOut
+    queue.o(i.xQueueGenericReceive) refers to queue.o(i.prvIsQueueEmpty) for prvIsQueueEmpty
+    queue.o(i.xQueueGenericReceive) refers to tasks.o(i.vTaskPriorityInherit) for vTaskPriorityInherit
+    queue.o(i.xQueueGenericReceive) refers to tasks.o(i.vTaskPlaceOnEventList) for vTaskPlaceOnEventList
+    queue.o(i.xQueueGenericReceive) refers to queue.o(i.prvUnlockQueue) for prvUnlockQueue
+    queue.o(i.xQueueGenericReceive) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    queue.o(i.xQueueGenericReset) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    queue.o(i.xQueueGenericReset) refers to tasks.o(i.xTaskRemoveFromEventList) for xTaskRemoveFromEventList
+    queue.o(i.xQueueGenericReset) refers to port.o(i.vPortYield) for vPortYield
+    queue.o(i.xQueueGenericReset) refers to list.o(i.vListInitialise) for vListInitialise
+    queue.o(i.xQueueGenericReset) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    queue.o(i.xQueueGenericSend) refers to tasks.o(i.xTaskGetSchedulerState) for xTaskGetSchedulerState
+    queue.o(i.xQueueGenericSend) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    queue.o(i.xQueueGenericSend) refers to queue.o(i.prvCopyDataToQueue) for prvCopyDataToQueue
+    queue.o(i.xQueueGenericSend) refers to tasks.o(i.xTaskRemoveFromEventList) for xTaskRemoveFromEventList
+    queue.o(i.xQueueGenericSend) refers to port.o(i.vPortYield) for vPortYield
+    queue.o(i.xQueueGenericSend) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    queue.o(i.xQueueGenericSend) refers to tasks.o(i.vTaskSetTimeOutState) for vTaskSetTimeOutState
+    queue.o(i.xQueueGenericSend) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    queue.o(i.xQueueGenericSend) refers to tasks.o(i.xTaskCheckForTimeOut) for xTaskCheckForTimeOut
+    queue.o(i.xQueueGenericSend) refers to queue.o(i.prvIsQueueFull) for prvIsQueueFull
+    queue.o(i.xQueueGenericSend) refers to tasks.o(i.vTaskPlaceOnEventList) for vTaskPlaceOnEventList
+    queue.o(i.xQueueGenericSend) refers to queue.o(i.prvUnlockQueue) for prvUnlockQueue
+    queue.o(i.xQueueGenericSend) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    queue.o(i.xQueueGenericSendFromISR) refers to port.o(.emb_text) for ulSetInterruptMaskFromISR
+    queue.o(i.xQueueGenericSendFromISR) refers to queue.o(i.prvCopyDataToQueue) for prvCopyDataToQueue
+    queue.o(i.xQueueGenericSendFromISR) refers to tasks.o(i.xTaskRemoveFromEventList) for xTaskRemoveFromEventList
+    queue.o(i.xQueueGiveFromISR) refers to port.o(.emb_text) for ulSetInterruptMaskFromISR
+    queue.o(i.xQueueGiveFromISR) refers to tasks.o(i.xTaskRemoveFromEventList) for xTaskRemoveFromEventList
+    queue.o(i.xQueueGiveMutexRecursive) refers to tasks.o(i.xTaskGetCurrentTaskHandle) for xTaskGetCurrentTaskHandle
+    queue.o(i.xQueueGiveMutexRecursive) refers to queue.o(i.xQueueGenericSend) for xQueueGenericSend
+    queue.o(i.xQueuePeekFromISR) refers to port.o(.emb_text) for ulSetInterruptMaskFromISR
+    queue.o(i.xQueuePeekFromISR) refers to queue.o(i.prvCopyDataFromQueue) for prvCopyDataFromQueue
+    queue.o(i.xQueueReceiveFromISR) refers to port.o(.emb_text) for ulSetInterruptMaskFromISR
+    queue.o(i.xQueueReceiveFromISR) refers to queue.o(i.prvCopyDataFromQueue) for prvCopyDataFromQueue
+    queue.o(i.xQueueReceiveFromISR) refers to tasks.o(i.xTaskRemoveFromEventList) for xTaskRemoveFromEventList
+    queue.o(i.xQueueTakeMutexRecursive) refers to tasks.o(i.xTaskGetCurrentTaskHandle) for xTaskGetCurrentTaskHandle
+    queue.o(i.xQueueTakeMutexRecursive) refers to queue.o(i.xQueueGenericReceive) for xQueueGenericReceive
+    tasks.o(i.prvAddCurrentTaskToDelayedList) refers to list.o(i.vListInsert) for vListInsert
+    tasks.o(i.prvAddCurrentTaskToDelayedList) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.prvAllocateTCBAndStack) refers to heap_4.o(i.pvPortMalloc) for pvPortMalloc
+    tasks.o(i.prvAllocateTCBAndStack) refers to heap_4.o(i.vPortFree) for vPortFree
+    tasks.o(i.prvAllocateTCBAndStack) refers to memseta.o(.text) for __aeabi_memset
+    tasks.o(i.prvCheckTasksWaitingTermination) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    tasks.o(i.prvCheckTasksWaitingTermination) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    tasks.o(i.prvCheckTasksWaitingTermination) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.prvCheckTasksWaitingTermination) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.prvCheckTasksWaitingTermination) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.prvCheckTasksWaitingTermination) refers to tasks.o(i.prvDeleteTCB) for prvDeleteTCB
+    tasks.o(i.prvCheckTasksWaitingTermination) refers to tasks.o(.bss) for xTasksWaitingTermination
+    tasks.o(i.prvCheckTasksWaitingTermination) refers to tasks.o(.data) for uxCurrentNumberOfTasks
+    tasks.o(i.prvDeleteTCB) refers to heap_4.o(i.vPortFree) for vPortFree
+    tasks.o(i.prvIdleTask) refers to tasks.o(i.prvCheckTasksWaitingTermination) for prvCheckTasksWaitingTermination
+    tasks.o(i.prvIdleTask) refers to port.o(i.vPortYield) for vPortYield
+    tasks.o(i.prvIdleTask) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.prvInitialiseTCBVariables) refers to list.o(i.vListInitialiseItem) for vListInitialiseItem
+    tasks.o(i.prvInitialiseTaskLists) refers to list.o(i.vListInitialise) for vListInitialise
+    tasks.o(i.prvInitialiseTaskLists) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.prvInitialiseTaskLists) refers to tasks.o(.data) for pxDelayedTaskList
+    tasks.o(i.prvListTaskWithinSingleList) refers to tasks.o(i.prvTaskCheckFreeStackSpace) for prvTaskCheckFreeStackSpace
+    tasks.o(i.prvResetNextTaskUnblockTime) refers to tasks.o(.data) for pxDelayedTaskList
+    tasks.o(i.prvTaskIsTaskSuspended) refers to tasks.o(.bss) for xSuspendedTaskList
+    tasks.o(i.pvTaskIncrementMutexHeldCount) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.ulTaskNotifyTake) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.ulTaskNotifyTake) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.ulTaskNotifyTake) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.ulTaskNotifyTake) refers to tasks.o(i.prvAddCurrentTaskToDelayedList) for prvAddCurrentTaskToDelayedList
+    tasks.o(i.ulTaskNotifyTake) refers to port.o(i.vPortYield) for vPortYield
+    tasks.o(i.ulTaskNotifyTake) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.ulTaskNotifyTake) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.ulTaskNotifyTake) refers to tasks.o(.bss) for xSuspendedTaskList
+    tasks.o(i.uxTaskGetNumberOfTasks) refers to tasks.o(.data) for uxCurrentNumberOfTasks
+    tasks.o(i.uxTaskGetSystemState) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    tasks.o(i.uxTaskGetSystemState) refers to tasks.o(i.prvListTaskWithinSingleList) for prvListTaskWithinSingleList
+    tasks.o(i.uxTaskGetSystemState) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    tasks.o(i.uxTaskGetSystemState) refers to tasks.o(.data) for uxCurrentNumberOfTasks
+    tasks.o(i.uxTaskGetSystemState) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.uxTaskPriorityGet) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.uxTaskPriorityGet) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.uxTaskPriorityGet) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.uxTaskPriorityGetFromISR) refers to port.o(.emb_text) for ulSetInterruptMaskFromISR
+    tasks.o(i.uxTaskPriorityGetFromISR) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.uxTaskResetEventItemValue) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.vTaskDelay) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    tasks.o(i.vTaskDelay) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.vTaskDelay) refers to tasks.o(i.prvAddCurrentTaskToDelayedList) for prvAddCurrentTaskToDelayedList
+    tasks.o(i.vTaskDelay) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    tasks.o(i.vTaskDelay) refers to port.o(i.vPortYield) for vPortYield
+    tasks.o(i.vTaskDelay) refers to tasks.o(.data) for uxSchedulerSuspended
+    tasks.o(i.vTaskDelayUntil) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    tasks.o(i.vTaskDelayUntil) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.vTaskDelayUntil) refers to tasks.o(i.prvAddCurrentTaskToDelayedList) for prvAddCurrentTaskToDelayedList
+    tasks.o(i.vTaskDelayUntil) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    tasks.o(i.vTaskDelayUntil) refers to port.o(i.vPortYield) for vPortYield
+    tasks.o(i.vTaskDelayUntil) refers to tasks.o(.data) for uxSchedulerSuspended
+    tasks.o(i.vTaskDelete) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.vTaskDelete) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.vTaskDelete) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.vTaskDelete) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.vTaskDelete) refers to port.o(i.vPortYield) for vPortYield
+    tasks.o(i.vTaskDelete) refers to tasks.o(i.prvResetNextTaskUnblockTime) for prvResetNextTaskUnblockTime
+    tasks.o(i.vTaskDelete) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.vTaskDelete) refers to tasks.o(.bss) for xTasksWaitingTermination
+    tasks.o(i.vTaskEndScheduler) refers to port.o(i.vPortEndScheduler) for vPortEndScheduler
+    tasks.o(i.vTaskEndScheduler) refers to tasks.o(.data) for xSchedulerRunning
+    tasks.o(i.vTaskMissedYield) refers to tasks.o(.data) for xYieldPending
+    tasks.o(i.vTaskNotifyGiveFromISR) refers to port.o(.emb_text) for ulSetInterruptMaskFromISR
+    tasks.o(i.vTaskNotifyGiveFromISR) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.vTaskNotifyGiveFromISR) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.vTaskNotifyGiveFromISR) refers to tasks.o(.data) for uxSchedulerSuspended
+    tasks.o(i.vTaskNotifyGiveFromISR) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.vTaskPlaceOnEventList) refers to list.o(i.vListInsert) for vListInsert
+    tasks.o(i.vTaskPlaceOnEventList) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.vTaskPlaceOnEventList) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.vTaskPlaceOnEventList) refers to tasks.o(i.prvAddCurrentTaskToDelayedList) for prvAddCurrentTaskToDelayedList
+    tasks.o(i.vTaskPlaceOnEventList) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.vTaskPlaceOnEventList) refers to tasks.o(.bss) for xSuspendedTaskList
+    tasks.o(i.vTaskPlaceOnEventListRestricted) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.vTaskPlaceOnEventListRestricted) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.vTaskPlaceOnEventListRestricted) refers to tasks.o(i.prvAddCurrentTaskToDelayedList) for prvAddCurrentTaskToDelayedList
+    tasks.o(i.vTaskPlaceOnEventListRestricted) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.vTaskPlaceOnEventListRestricted) refers to tasks.o(.bss) for xSuspendedTaskList
+    tasks.o(i.vTaskPlaceOnUnorderedEventList) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.vTaskPlaceOnUnorderedEventList) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.vTaskPlaceOnUnorderedEventList) refers to tasks.o(i.prvAddCurrentTaskToDelayedList) for prvAddCurrentTaskToDelayedList
+    tasks.o(i.vTaskPlaceOnUnorderedEventList) refers to tasks.o(.data) for uxSchedulerSuspended
+    tasks.o(i.vTaskPlaceOnUnorderedEventList) refers to tasks.o(.bss) for xSuspendedTaskList
+    tasks.o(i.vTaskPriorityInherit) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.vTaskPriorityInherit) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.vTaskPriorityInherit) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.vTaskPriorityInherit) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.vTaskPrioritySet) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.vTaskPrioritySet) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.vTaskPrioritySet) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.vTaskPrioritySet) refers to port.o(i.vPortYield) for vPortYield
+    tasks.o(i.vTaskPrioritySet) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.vTaskPrioritySet) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.vTaskPrioritySet) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.vTaskResume) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.vTaskResume) refers to tasks.o(i.prvTaskIsTaskSuspended) for prvTaskIsTaskSuspended
+    tasks.o(i.vTaskResume) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.vTaskResume) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.vTaskResume) refers to port.o(i.vPortYield) for vPortYield
+    tasks.o(i.vTaskResume) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.vTaskResume) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.vTaskResume) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.vTaskSetTimeOutState) refers to tasks.o(.data) for xNumOfOverflows
+    tasks.o(i.vTaskStartScheduler) refers to tasks.o(i.xTaskGenericCreate) for xTaskGenericCreate
+    tasks.o(i.vTaskStartScheduler) refers to timers.o(i.xTimerCreateTimerTask) for xTimerCreateTimerTask
+    tasks.o(i.vTaskStartScheduler) refers to port.o(i.xPortStartScheduler) for xPortStartScheduler
+    tasks.o(i.vTaskStartScheduler) refers to tasks.o(i.prvIdleTask) for prvIdleTask
+    tasks.o(i.vTaskStartScheduler) refers to tasks.o(.data) for xNextTaskUnblockTime
+    tasks.o(i.vTaskSuspend) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.vTaskSuspend) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.vTaskSuspend) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.vTaskSuspend) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.vTaskSuspend) refers to port.o(i.vPortYield) for vPortYield
+    tasks.o(i.vTaskSuspend) refers to tasks.o(i.vTaskSwitchContext) for vTaskSwitchContext
+    tasks.o(i.vTaskSuspend) refers to tasks.o(i.prvResetNextTaskUnblockTime) for prvResetNextTaskUnblockTime
+    tasks.o(i.vTaskSuspend) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.vTaskSuspend) refers to tasks.o(.bss) for xSuspendedTaskList
+    tasks.o(i.vTaskSuspendAll) refers to tasks.o(.data) for uxSchedulerSuspended
+    tasks.o(i.vTaskSwitchContext) refers to tasks.o(.data) for uxSchedulerSuspended
+    tasks.o(i.vTaskSwitchContext) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.xTaskCheckForTimeOut) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.xTaskCheckForTimeOut) refers to tasks.o(i.vTaskSetTimeOutState) for vTaskSetTimeOutState
+    tasks.o(i.xTaskCheckForTimeOut) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.xTaskCheckForTimeOut) refers to tasks.o(.data) for xTickCount
+    tasks.o(i.xTaskGenericCreate) refers to tasks.o(i.prvAllocateTCBAndStack) for prvAllocateTCBAndStack
+    tasks.o(i.xTaskGenericCreate) refers to tasks.o(i.prvInitialiseTCBVariables) for prvInitialiseTCBVariables
+    tasks.o(i.xTaskGenericCreate) refers to port.o(i.pxPortInitialiseStack) for pxPortInitialiseStack
+    tasks.o(i.xTaskGenericCreate) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.xTaskGenericCreate) refers to tasks.o(i.prvInitialiseTaskLists) for prvInitialiseTaskLists
+    tasks.o(i.xTaskGenericCreate) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.xTaskGenericCreate) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.xTaskGenericCreate) refers to port.o(i.vPortYield) for vPortYield
+    tasks.o(i.xTaskGenericCreate) refers to tasks.o(.data) for uxCurrentNumberOfTasks
+    tasks.o(i.xTaskGenericCreate) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.xTaskGenericNotify) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.xTaskGenericNotify) refers to system_mkl46z4.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    tasks.o(i.xTaskGenericNotify) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.xTaskGenericNotify) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.xTaskGenericNotify) refers to port.o(i.vPortYield) for vPortYield
+    tasks.o(i.xTaskGenericNotify) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.xTaskGenericNotify) refers to tasks.o(.data) for uxTopReadyPriority
+    tasks.o(i.xTaskGenericNotify) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.xTaskGenericNotifyFromISR) refers to port.o(.emb_text) for ulSetInterruptMaskFromISR
+    tasks.o(i.xTaskGenericNotifyFromISR) refers to system_mkl46z4.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    tasks.o(i.xTaskGenericNotifyFromISR) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.xTaskGenericNotifyFromISR) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.xTaskGenericNotifyFromISR) refers to tasks.o(.data) for uxSchedulerSuspended
+    tasks.o(i.xTaskGenericNotifyFromISR) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.xTaskGetCurrentTaskHandle) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.xTaskGetSchedulerState) refers to tasks.o(.data) for xSchedulerRunning
+    tasks.o(i.xTaskGetTickCount) refers to tasks.o(.data) for xTickCount
+    tasks.o(i.xTaskGetTickCountFromISR) refers to tasks.o(.data) for xTickCount
+    tasks.o(i.xTaskIncrementTick) refers to tasks.o(i.prvResetNextTaskUnblockTime) for prvResetNextTaskUnblockTime
+    tasks.o(i.xTaskIncrementTick) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.xTaskIncrementTick) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.xTaskIncrementTick) refers to tasks.o(.data) for uxSchedulerSuspended
+    tasks.o(i.xTaskIncrementTick) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.xTaskNotifyStateClear) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.xTaskNotifyStateClear) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.xTaskNotifyStateClear) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.xTaskNotifyWait) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.xTaskNotifyWait) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.xTaskNotifyWait) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.xTaskNotifyWait) refers to tasks.o(i.prvAddCurrentTaskToDelayedList) for prvAddCurrentTaskToDelayedList
+    tasks.o(i.xTaskNotifyWait) refers to port.o(i.vPortYield) for vPortYield
+    tasks.o(i.xTaskNotifyWait) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.xTaskNotifyWait) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.xTaskNotifyWait) refers to tasks.o(.bss) for xSuspendedTaskList
+    tasks.o(i.xTaskPriorityDisinherit) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.xTaskPriorityDisinherit) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.xTaskPriorityDisinherit) refers to tasks.o(.data) for pxCurrentTCB
+    tasks.o(i.xTaskPriorityDisinherit) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.xTaskRemoveFromEventList) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.xTaskRemoveFromEventList) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.xTaskRemoveFromEventList) refers to tasks.o(.data) for uxSchedulerSuspended
+    tasks.o(i.xTaskRemoveFromEventList) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.xTaskRemoveFromUnorderedEventList) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.xTaskRemoveFromUnorderedEventList) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.xTaskRemoveFromUnorderedEventList) refers to tasks.o(.data) for uxSchedulerSuspended
+    tasks.o(i.xTaskRemoveFromUnorderedEventList) refers to tasks.o(.bss) for pxReadyTasksLists
+    tasks.o(i.xTaskResumeAll) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    tasks.o(i.xTaskResumeAll) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.xTaskResumeAll) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.xTaskResumeAll) refers to tasks.o(i.xTaskIncrementTick) for xTaskIncrementTick
+    tasks.o(i.xTaskResumeAll) refers to port.o(i.vPortYield) for vPortYield
+    tasks.o(i.xTaskResumeAll) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    tasks.o(i.xTaskResumeAll) refers to tasks.o(.data) for uxSchedulerSuspended
+    tasks.o(i.xTaskResumeAll) refers to tasks.o(.bss) for xPendingReadyList
+    tasks.o(i.xTaskResumeFromISR) refers to port.o(.emb_text) for ulSetInterruptMaskFromISR
+    tasks.o(i.xTaskResumeFromISR) refers to tasks.o(i.prvTaskIsTaskSuspended) for prvTaskIsTaskSuspended
+    tasks.o(i.xTaskResumeFromISR) refers to list.o(i.uxListRemove) for uxListRemove
+    tasks.o(i.xTaskResumeFromISR) refers to list.o(i.vListInsertEnd) for vListInsertEnd
+    tasks.o(i.xTaskResumeFromISR) refers to tasks.o(.data) for uxSchedulerSuspended
+    tasks.o(i.xTaskResumeFromISR) refers to tasks.o(.bss) for pxReadyTasksLists
+    timers.o(i.prvCheckForValidListAndQueue) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    timers.o(i.prvCheckForValidListAndQueue) refers to list.o(i.vListInitialise) for vListInitialise
+    timers.o(i.prvCheckForValidListAndQueue) refers to queue.o(i.xQueueGenericCreate) for xQueueGenericCreate
+    timers.o(i.prvCheckForValidListAndQueue) refers to queue.o(i.vQueueAddToRegistry) for vQueueAddToRegistry
+    timers.o(i.prvCheckForValidListAndQueue) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    timers.o(i.prvCheckForValidListAndQueue) refers to timers.o(.data) for xTimerQueue
+    timers.o(i.prvCheckForValidListAndQueue) refers to timers.o(.bss) for xActiveTimerList1
+    timers.o(i.prvGetNextExpireTime) refers to timers.o(.data) for pxCurrentTimerList
+    timers.o(i.prvInsertTimerInActiveList) refers to list.o(i.vListInsert) for vListInsert
+    timers.o(i.prvInsertTimerInActiveList) refers to timers.o(.data) for pxOverflowTimerList
+    timers.o(i.prvProcessExpiredTimer) refers to list.o(i.uxListRemove) for uxListRemove
+    timers.o(i.prvProcessExpiredTimer) refers to timers.o(i.prvInsertTimerInActiveList) for prvInsertTimerInActiveList
+    timers.o(i.prvProcessExpiredTimer) refers to timers.o(i.xTimerGenericCommand) for xTimerGenericCommand
+    timers.o(i.prvProcessExpiredTimer) refers to timers.o(.data) for pxCurrentTimerList
+    timers.o(i.prvProcessReceivedCommands) refers to list.o(i.uxListRemove) for uxListRemove
+    timers.o(i.prvProcessReceivedCommands) refers to timers.o(i.prvSampleTimeNow) for prvSampleTimeNow
+    timers.o(i.prvProcessReceivedCommands) refers to system_mkl46z4.o(i.__ARM_common_switch8) for __ARM_common_switch8
+    timers.o(i.prvProcessReceivedCommands) refers to timers.o(i.prvInsertTimerInActiveList) for prvInsertTimerInActiveList
+    timers.o(i.prvProcessReceivedCommands) refers to timers.o(i.xTimerGenericCommand) for xTimerGenericCommand
+    timers.o(i.prvProcessReceivedCommands) refers to heap_4.o(i.vPortFree) for vPortFree
+    timers.o(i.prvProcessReceivedCommands) refers to queue.o(i.xQueueGenericReceive) for xQueueGenericReceive
+    timers.o(i.prvProcessReceivedCommands) refers to timers.o(.data) for xTimerQueue
+    timers.o(i.prvProcessTimerOrBlockTask) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    timers.o(i.prvProcessTimerOrBlockTask) refers to timers.o(i.prvSampleTimeNow) for prvSampleTimeNow
+    timers.o(i.prvProcessTimerOrBlockTask) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    timers.o(i.prvProcessTimerOrBlockTask) refers to timers.o(i.prvProcessExpiredTimer) for prvProcessExpiredTimer
+    timers.o(i.prvProcessTimerOrBlockTask) refers to queue.o(i.vQueueWaitForMessageRestricted) for vQueueWaitForMessageRestricted
+    timers.o(i.prvProcessTimerOrBlockTask) refers to port.o(i.vPortYield) for vPortYield
+    timers.o(i.prvProcessTimerOrBlockTask) refers to timers.o(.data) for pxOverflowTimerList
+    timers.o(i.prvSampleTimeNow) refers to tasks.o(i.xTaskGetTickCount) for xTaskGetTickCount
+    timers.o(i.prvSampleTimeNow) refers to timers.o(i.prvSwitchTimerLists) for prvSwitchTimerLists
+    timers.o(i.prvSampleTimeNow) refers to timers.o(.data) for xLastTime
+    timers.o(i.prvSwitchTimerLists) refers to list.o(i.uxListRemove) for uxListRemove
+    timers.o(i.prvSwitchTimerLists) refers to list.o(i.vListInsert) for vListInsert
+    timers.o(i.prvSwitchTimerLists) refers to timers.o(i.xTimerGenericCommand) for xTimerGenericCommand
+    timers.o(i.prvSwitchTimerLists) refers to timers.o(.data) for pxCurrentTimerList
+    timers.o(i.prvTimerTask) refers to timers.o(i.prvGetNextExpireTime) for prvGetNextExpireTime
+    timers.o(i.prvTimerTask) refers to timers.o(i.prvProcessTimerOrBlockTask) for prvProcessTimerOrBlockTask
+    timers.o(i.prvTimerTask) refers to timers.o(i.prvProcessReceivedCommands) for prvProcessReceivedCommands
+    timers.o(i.pvTimerGetTimerID) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    timers.o(i.pvTimerGetTimerID) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    timers.o(i.vTimerSetTimerID) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    timers.o(i.vTimerSetTimerID) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    timers.o(i.xTimerCreate) refers to heap_4.o(i.pvPortMalloc) for pvPortMalloc
+    timers.o(i.xTimerCreate) refers to timers.o(i.prvCheckForValidListAndQueue) for prvCheckForValidListAndQueue
+    timers.o(i.xTimerCreate) refers to list.o(i.vListInitialiseItem) for vListInitialiseItem
+    timers.o(i.xTimerCreateTimerTask) refers to timers.o(i.prvCheckForValidListAndQueue) for prvCheckForValidListAndQueue
+    timers.o(i.xTimerCreateTimerTask) refers to tasks.o(i.xTaskGenericCreate) for xTaskGenericCreate
+    timers.o(i.xTimerCreateTimerTask) refers to timers.o(.data) for xTimerQueue
+    timers.o(i.xTimerCreateTimerTask) refers to timers.o(i.prvTimerTask) for prvTimerTask
+    timers.o(i.xTimerGenericCommand) refers to tasks.o(i.xTaskGetSchedulerState) for xTaskGetSchedulerState
+    timers.o(i.xTimerGenericCommand) refers to queue.o(i.xQueueGenericSend) for xQueueGenericSend
+    timers.o(i.xTimerGenericCommand) refers to queue.o(i.xQueueGenericSendFromISR) for xQueueGenericSendFromISR
+    timers.o(i.xTimerGenericCommand) refers to timers.o(.data) for xTimerQueue
+    timers.o(i.xTimerIsTimerActive) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    timers.o(i.xTimerIsTimerActive) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    event_groups.o(i.vEventGroupClearBitsCallback) refers to event_groups.o(i.xEventGroupClearBits) for xEventGroupClearBits
+    event_groups.o(i.vEventGroupDelete) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    event_groups.o(i.vEventGroupDelete) refers to tasks.o(i.xTaskRemoveFromUnorderedEventList) for xTaskRemoveFromUnorderedEventList
+    event_groups.o(i.vEventGroupDelete) refers to heap_4.o(i.vPortFree) for vPortFree
+    event_groups.o(i.vEventGroupDelete) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    event_groups.o(i.vEventGroupSetBitsCallback) refers to event_groups.o(i.xEventGroupSetBits) for xEventGroupSetBits
+    event_groups.o(i.xEventGroupClearBits) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    event_groups.o(i.xEventGroupClearBits) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    event_groups.o(i.xEventGroupCreate) refers to heap_4.o(i.pvPortMalloc) for pvPortMalloc
+    event_groups.o(i.xEventGroupCreate) refers to list.o(i.vListInitialise) for vListInitialise
+    event_groups.o(i.xEventGroupGetBitsFromISR) refers to port.o(.emb_text) for ulSetInterruptMaskFromISR
+    event_groups.o(i.xEventGroupSetBits) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    event_groups.o(i.xEventGroupSetBits) refers to tasks.o(i.xTaskRemoveFromUnorderedEventList) for xTaskRemoveFromUnorderedEventList
+    event_groups.o(i.xEventGroupSetBits) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    event_groups.o(i.xEventGroupSync) refers to tasks.o(i.xTaskGetSchedulerState) for xTaskGetSchedulerState
+    event_groups.o(i.xEventGroupSync) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    event_groups.o(i.xEventGroupSync) refers to event_groups.o(i.xEventGroupSetBits) for xEventGroupSetBits
+    event_groups.o(i.xEventGroupSync) refers to tasks.o(i.vTaskPlaceOnUnorderedEventList) for vTaskPlaceOnUnorderedEventList
+    event_groups.o(i.xEventGroupSync) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    event_groups.o(i.xEventGroupSync) refers to port.o(i.vPortYield) for vPortYield
+    event_groups.o(i.xEventGroupSync) refers to tasks.o(i.uxTaskResetEventItemValue) for uxTaskResetEventItemValue
+    event_groups.o(i.xEventGroupSync) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    event_groups.o(i.xEventGroupSync) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    event_groups.o(i.xEventGroupWaitBits) refers to tasks.o(i.xTaskGetSchedulerState) for xTaskGetSchedulerState
+    event_groups.o(i.xEventGroupWaitBits) refers to tasks.o(i.vTaskSuspendAll) for vTaskSuspendAll
+    event_groups.o(i.xEventGroupWaitBits) refers to event_groups.o(i.prvTestWaitCondition) for prvTestWaitCondition
+    event_groups.o(i.xEventGroupWaitBits) refers to tasks.o(i.vTaskPlaceOnUnorderedEventList) for vTaskPlaceOnUnorderedEventList
+    event_groups.o(i.xEventGroupWaitBits) refers to tasks.o(i.xTaskResumeAll) for xTaskResumeAll
+    event_groups.o(i.xEventGroupWaitBits) refers to port.o(i.vPortYield) for vPortYield
+    event_groups.o(i.xEventGroupWaitBits) refers to tasks.o(i.uxTaskResetEventItemValue) for uxTaskResetEventItemValue
+    event_groups.o(i.xEventGroupWaitBits) refers to port.o(i.vPortEnterCritical) for vPortEnterCritical
+    event_groups.o(i.xEventGroupWaitBits) refers to port.o(i.vPortExitCritical) for vPortExitCritical
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry4.o(.ARM.Collect$$$$00000003) for _main_stk
+    idiv.o(.text) refers to uidiv.o(.text) for __aeabi_uidivmod
+    entry4.o(.ARM.Collect$$$$00000003) refers to entry4.o(.ARM.Collect$$$$00002714) for __lit__00000000
+    entry4.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to freertos_hello.o(i.main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to freertos_hello.o(i.main) for main
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing system_mkl46z4.o(.rev16_text), (4 bytes).
+    Removing system_mkl46z4.o(.revsh_text), (4 bytes).
+    Removing system_mkl46z4.o(i.SystemCoreClockUpdate), (400 bytes).
+    Removing port.o(i.vPortEndScheduler), (36 bytes).
+    Removing fsl_lpsci.o(.rev16_text), (4 bytes).
+    Removing fsl_lpsci.o(.revsh_text), (4 bytes).
+    Removing fsl_lpsci.o(i.LPSCI_Deinit), (56 bytes).
+    Removing fsl_lpsci.o(i.LPSCI_DisableInterrupts), (32 bytes).
+    Removing fsl_lpsci.o(i.LPSCI_EnableInterrupts), (32 bytes).
+    Removing fsl_lpsci.o(i.LPSCI_GetEnabledInterrupts), (32 bytes).
+    Removing fsl_lpsci.o(i.LPSCI_ReadNonBlocking), (100 bytes).
+    Removing fsl_lpsci.o(i.LPSCI_SetBaudRate), (312 bytes).
+    Removing fsl_lpsci.o(i.LPSCI_TransferAbortReceive), (112 bytes).
+    Removing fsl_lpsci.o(i.LPSCI_TransferAbortSend), (108 bytes).
+    Removing fsl_lpsci.o(i.LPSCI_TransferCreateHandle), (180 bytes).
+    Removing fsl_lpsci.o(i.LPSCI_TransferGetReceiveCount), (140 bytes).
+    Removing fsl_lpsci.o(i.LPSCI_TransferGetRxRingBufferLength), (112 bytes).
+    Removing fsl_lpsci.o(i.LPSCI_TransferGetSendCount), (140 bytes).
+    Removing fsl_lpsci.o(i.LPSCI_TransferHandleErrorIRQ), (2 bytes).
+    Removing fsl_lpsci.o(i.LPSCI_TransferHandleIRQ), (460 bytes).
+    Removing fsl_lpsci.o(i.LPSCI_TransferIsRxRingBufferFull), (104 bytes).
+    Removing fsl_lpsci.o(i.LPSCI_TransferReceiveNonBlocking), (436 bytes).
+    Removing fsl_lpsci.o(i.LPSCI_TransferSendNonBlocking), (228 bytes).
+    Removing fsl_lpsci.o(i.LPSCI_TransferStartRingBuffer), (144 bytes).
+    Removing fsl_lpsci.o(i.LPSCI_TransferStopRingBuffer), (116 bytes).
+    Removing fsl_lpsci.o(i.LPSCI_WriteNonBlocking), (100 bytes).
+    Removing fsl_uart.o(.rev16_text), (4 bytes).
+    Removing fsl_uart.o(.revsh_text), (4 bytes).
+    Removing fsl_uart.o(i.UART1_RX_TX_DriverIRQHandler), (8 bytes).
+    Removing fsl_uart.o(i.UART2_RX_TX_DriverIRQHandler), (8 bytes).
+    Removing fsl_uart.o(i.UART_ClearStatusFlags), (76 bytes).
+    Removing fsl_uart.o(i.UART_Deinit), (60 bytes).
+    Removing fsl_uart.o(i.UART_DisableInterrupts), (32 bytes).
+    Removing fsl_uart.o(i.UART_EnableInterrupts), (32 bytes).
+    Removing fsl_uart.o(i.UART_GetEnabledInterrupts), (32 bytes).
+    Removing fsl_uart.o(i.UART_ReadNonBlocking), (104 bytes).
+    Removing fsl_uart.o(i.UART_SetBaudRate), (216 bytes).
+    Removing fsl_uart.o(i.UART_TransferAbortReceive), (116 bytes).
+    Removing fsl_uart.o(i.UART_TransferAbortSend), (108 bytes).
+    Removing fsl_uart.o(i.UART_TransferCreateHandle), (180 bytes).
+    Removing fsl_uart.o(i.UART_TransferGetReceiveCount), (148 bytes).
+    Removing fsl_uart.o(i.UART_TransferGetRxRingBufferLength), (112 bytes).
+    Removing fsl_uart.o(i.UART_TransferGetSendCount), (140 bytes).
+    Removing fsl_uart.o(i.UART_TransferHandleErrorIRQ), (2 bytes).
+    Removing fsl_uart.o(i.UART_TransferHandleIRQ), (460 bytes).
+    Removing fsl_uart.o(i.UART_TransferIsRxRingBufferFull), (104 bytes).
+    Removing fsl_uart.o(i.UART_TransferReceiveNonBlocking), (436 bytes).
+    Removing fsl_uart.o(i.UART_TransferSendNonBlocking), (228 bytes).
+    Removing fsl_uart.o(i.UART_TransferStartRingBuffer), (144 bytes).
+    Removing fsl_uart.o(i.UART_TransferStopRingBuffer), (116 bytes).
+    Removing fsl_uart.o(i.UART_WriteNonBlocking), (104 bytes).
+    Removing fsl_clock.o(.rev16_text), (4 bytes).
+    Removing fsl_clock.o(.revsh_text), (4 bytes).
+    Removing fsl_clock.o(i.CLOCK_BootToBlpeMode), (60 bytes).
+    Removing fsl_clock.o(i.CLOCK_BootToBlpiMode), (68 bytes).
+    Removing fsl_clock.o(i.CLOCK_BootToFeeMode), (30 bytes).
+    Removing fsl_clock.o(i.CLOCK_BootToFeiMode), (20 bytes).
+    Removing fsl_clock.o(i.CLOCK_CalcPllDiv), (256 bytes).
+    Removing fsl_clock.o(i.CLOCK_ClearStatusFlags), (40 bytes).
+    Removing fsl_clock.o(i.CLOCK_DeinitOsc0), (28 bytes).
+    Removing fsl_clock.o(i.CLOCK_EnableUsbfs0Clock), (108 bytes).
+    Removing fsl_clock.o(i.CLOCK_ExternalModeToFbeModeQuick), (76 bytes).
+    Removing fsl_clock.o(i.CLOCK_FllStableDelay), (28 bytes).
+    Removing fsl_clock.o(i.CLOCK_GetBusClkFreq), (56 bytes).
+    Removing fsl_clock.o(i.CLOCK_GetFlashClkFreq), (56 bytes).
+    Removing fsl_clock.o(i.CLOCK_GetMode), (120 bytes).
+    Removing fsl_clock.o(i.CLOCK_GetPlatClkFreq), (28 bytes).
+    Removing fsl_clock.o(i.CLOCK_GetStatusFlags), (64 bytes).
+    Removing fsl_clock.o(i.CLOCK_InternalModeToFbiModeQuick), (52 bytes).
+    Removing fsl_clock.o(i.CLOCK_SetBlpeMode), (20 bytes).
+    Removing fsl_clock.o(i.CLOCK_SetBlpiMode), (20 bytes).
+    Removing fsl_clock.o(i.CLOCK_SetFbeMode), (192 bytes).
+    Removing fsl_clock.o(i.CLOCK_SetFbiMode), (152 bytes).
+    Removing fsl_clock.o(i.CLOCK_SetFeeMode), (164 bytes).
+    Removing fsl_clock.o(i.CLOCK_SetFeiMode), (140 bytes).
+    Removing fsl_clock.o(i.CLOCK_SetMcgConfig), (292 bytes).
+    Removing fsl_clock.o(i.CLOCK_SetOsc0MonitorMode), (80 bytes).
+    Removing fsl_clock.o(i.CLOCK_SetPeeMode), (36 bytes).
+    Removing fsl_clock.o(i.CLOCK_SetPll0MonitorMode), (68 bytes).
+    Removing fsl_clock.o(i.CLOCK_TrimInternalRefClk), (248 bytes).
+    Removing fsl_common.o(.rev16_text), (4 bytes).
+    Removing fsl_common.o(.revsh_text), (4 bytes).
+    Removing fsl_common.o(i.InstallIRQHandler), (84 bytes).
+    Removing fsl_gpio.o(.rev16_text), (4 bytes).
+    Removing fsl_gpio.o(.revsh_text), (4 bytes).
+    Removing fsl_gpio.o(i.FGPIO_ClearPinsInterruptFlags), (32 bytes).
+    Removing fsl_gpio.o(i.FGPIO_GetInstance), (144 bytes).
+    Removing fsl_gpio.o(i.FGPIO_GetPinsInterruptFlags), (28 bytes).
+    Removing fsl_gpio.o(i.FGPIO_PinInit), (140 bytes).
+    Removing fsl_gpio.o(i.GPIO_ClearPinsInterruptFlags), (32 bytes).
+    Removing fsl_gpio.o(i.GPIO_GetInstance), (144 bytes).
+    Removing fsl_gpio.o(i.GPIO_GetPinsInterruptFlags), (28 bytes).
+    Removing fsl_gpio.o(.constdata), (60 bytes).
+    Removing fsl_smc.o(.rev16_text), (4 bytes).
+    Removing fsl_smc.o(.revsh_text), (4 bytes).
+    Removing fsl_smc.o(i.SMC_SetPowerModeLls), (88 bytes).
+    Removing fsl_smc.o(i.SMC_SetPowerModeRun), (20 bytes).
+    Removing fsl_smc.o(i.SMC_SetPowerModeStop), (108 bytes).
+    Removing fsl_smc.o(i.SMC_SetPowerModeVlls), (136 bytes).
+    Removing fsl_smc.o(i.SMC_SetPowerModeVlpr), (22 bytes).
+    Removing fsl_smc.o(i.SMC_SetPowerModeVlps), (88 bytes).
+    Removing fsl_smc.o(i.SMC_SetPowerModeVlpw), (56 bytes).
+    Removing fsl_smc.o(i.SMC_SetPowerModeWait), (56 bytes).
+    Removing fsl_i2c.o(.rev16_text), (4 bytes).
+    Removing fsl_i2c.o(.revsh_text), (4 bytes).
+    Removing fsl_i2c.o(i.CLOCK_DisableClock), (24 bytes).
+    Removing fsl_i2c.o(i.I2C_Enable), (24 bytes).
+    Removing fsl_i2c.o(i.I2C_MasterDeinit), (36 bytes).
+    Removing fsl_i2c.o(i.I2C_MasterReadBlocking), (124 bytes).
+    Removing fsl_i2c.o(i.I2C_MasterTransferAbort), (100 bytes).
+    Removing fsl_i2c.o(i.I2C_MasterTransferBlocking), (456 bytes).
+    Removing fsl_i2c.o(i.I2C_MasterTransferGetCount), (108 bytes).
+    Removing fsl_i2c.o(i.I2C_MasterWriteBlocking), (116 bytes).
+    Removing fsl_i2c.o(i.I2C_SlaveDeinit), (36 bytes).
+    Removing fsl_i2c.o(i.I2C_SlaveGetDefaultConfig), (108 bytes).
+    Removing fsl_i2c.o(i.I2C_SlaveInit), (320 bytes).
+    Removing fsl_i2c.o(i.I2C_SlaveReadBlocking), (112 bytes).
+    Removing fsl_i2c.o(i.I2C_SlaveTransferAbort), (116 bytes).
+    Removing fsl_i2c.o(i.I2C_SlaveTransferCreateHandle), (152 bytes).
+    Removing fsl_i2c.o(i.I2C_SlaveTransferGetCount), (116 bytes).
+    Removing fsl_i2c.o(i.I2C_SlaveTransferHandleIRQ), (596 bytes).
+    Removing fsl_i2c.o(i.I2C_SlaveTransferNonBlocking), (156 bytes).
+    Removing fsl_i2c.o(i.I2C_SlaveWriteBlocking), (90 bytes).
+    Removing freertos_hello.o(.rev16_text), (4 bytes).
+    Removing freertos_hello.o(.revsh_text), (4 bytes).
+    Removing pin_mux.o(.rev16_text), (4 bytes).
+    Removing pin_mux.o(.revsh_text), (4 bytes).
+    Removing board.o(.rev16_text), (4 bytes).
+    Removing board.o(.revsh_text), (4 bytes).
+    Removing clock_config.o(.rev16_text), (4 bytes).
+    Removing clock_config.o(.revsh_text), (4 bytes).
+    Removing clock_config.o(i.BOARD_BootClockVLPR), (88 bytes).
+    Removing fsl_debug_console.o(.rev16_text), (4 bytes).
+    Removing fsl_debug_console.o(.revsh_text), (4 bytes).
+    Removing fsl_debug_console.o(i.DbgConsole_Deinit), (72 bytes).
+    Removing fsl_debug_console.o(i.DbgConsole_Getchar), (36 bytes).
+    Removing fsl_debug_console.o(i.DbgConsole_ScanIgnoreWhiteSpace), (50 bytes).
+    Removing fsl_debug_console.o(i.DbgConsole_Scanf), (128 bytes).
+    Removing fsl_debug_console.o(i.DbgConsole_ScanfFormattedData), (1052 bytes).
+    Removing fsl_debug_console.o(i.fgetc), (40 bytes).
+    Removing fsl_debug_console.o(i.fputc), (36 bytes).
+    Removing fsl_debug_console.o(.data), (8 bytes).
+    Removing heap_4.o(i.vPortInitialiseBlocks), (2 bytes).
+    Removing heap_4.o(i.xPortGetFreeHeapSize), (12 bytes).
+    Removing heap_4.o(i.xPortGetMinimumEverFreeHeapSize), (12 bytes).
+    Removing queue.o(i.ucQueueGetQueueType), (8 bytes).
+    Removing queue.o(i.uxQueueGetQueueNumber), (6 bytes).
+    Removing queue.o(i.uxQueueMessagesWaiting), (28 bytes).
+    Removing queue.o(i.uxQueueMessagesWaitingFromISR), (16 bytes).
+    Removing queue.o(i.uxQueueSpacesAvailable), (34 bytes).
+    Removing queue.o(i.vQueueDelete), (30 bytes).
+    Removing queue.o(i.vQueueSetQueueNumber), (4 bytes).
+    Removing queue.o(i.vQueueUnregisterQueue), (44 bytes).
+    Removing queue.o(i.xQueueCreateCountingSemaphore), (78 bytes).
+    Removing queue.o(i.xQueueCreateMutex), (78 bytes).
+    Removing queue.o(i.xQueueGiveFromISR), (156 bytes).
+    Removing queue.o(i.xQueueGiveMutexRecursive), (60 bytes).
+    Removing queue.o(i.xQueueIsQueueEmptyFromISR), (26 bytes).
+    Removing queue.o(i.xQueueIsQueueFullFromISR), (28 bytes).
+    Removing queue.o(i.xQueuePeekFromISR), (108 bytes).
+    Removing queue.o(i.xQueueReceiveFromISR), (144 bytes).
+    Removing queue.o(i.xQueueTakeMutexRecursive), (66 bytes).
+    Removing tasks.o(i.prvListTaskWithinSingleList), (176 bytes).
+    Removing tasks.o(i.prvTaskCheckFreeStackSpace), (22 bytes).
+    Removing tasks.o(i.prvTaskIsTaskSuspended), (84 bytes).
+    Removing tasks.o(i.ulTaskNotifyTake), (156 bytes).
+    Removing tasks.o(i.uxTaskGetNumberOfTasks), (12 bytes).
+    Removing tasks.o(i.uxTaskGetSystemState), (152 bytes).
+    Removing tasks.o(i.uxTaskGetTaskNumber), (16 bytes).
+    Removing tasks.o(i.uxTaskPriorityGet), (36 bytes).
+    Removing tasks.o(i.uxTaskPriorityGetFromISR), (40 bytes).
+    Removing tasks.o(i.uxTaskResetEventItemValue), (28 bytes).
+    Removing tasks.o(i.vTaskDelayUntil), (172 bytes).
+    Removing tasks.o(i.vTaskDelete), (160 bytes).
+    Removing tasks.o(i.vTaskEndScheduler), (20 bytes).
+    Removing tasks.o(i.vTaskNotifyGiveFromISR), (172 bytes).
+    Removing tasks.o(i.vTaskPlaceOnUnorderedEventList), (128 bytes).
+    Removing tasks.o(i.vTaskPrioritySet), (228 bytes).
+    Removing tasks.o(i.vTaskResume), (116 bytes).
+    Removing tasks.o(i.vTaskSetTaskNumber), (10 bytes).
+    Removing tasks.o(i.vTaskSuspend), (168 bytes).
+    Removing tasks.o(i.xTaskGenericNotify), (212 bytes).
+    Removing tasks.o(i.xTaskGenericNotifyFromISR), (252 bytes).
+    Removing tasks.o(i.xTaskGetCurrentTaskHandle), (12 bytes).
+    Removing tasks.o(i.xTaskGetTickCountFromISR), (12 bytes).
+    Removing tasks.o(i.xTaskNotifyStateClear), (56 bytes).
+    Removing tasks.o(i.xTaskNotifyWait), (188 bytes).
+    Removing tasks.o(i.xTaskRemoveFromUnorderedEventList), (144 bytes).
+    Removing tasks.o(i.xTaskResumeFromISR), (136 bytes).
+    Removing timers.o(i.pcTimerGetTimerName), (18 bytes).
+    Removing timers.o(i.pvTimerGetTimerID), (30 bytes).
+    Removing timers.o(i.vTimerSetTimerID), (30 bytes).
+    Removing timers.o(i.xTimerCreate), (80 bytes).
+    Removing timers.o(i.xTimerIsTimerActive), (46 bytes).
+    Removing event_groups.o(i.prvTestWaitCondition), (34 bytes).
+    Removing event_groups.o(i.uxEventGroupGetNumber), (14 bytes).
+    Removing event_groups.o(i.vEventGroupClearBitsCallback), (16 bytes).
+    Removing event_groups.o(i.vEventGroupDelete), (68 bytes).
+    Removing event_groups.o(i.vEventGroupSetBitsCallback), (16 bytes).
+    Removing event_groups.o(i.xEventGroupClearBits), (62 bytes).
+    Removing event_groups.o(i.xEventGroupCreate), (28 bytes).
+    Removing event_groups.o(i.xEventGroupGetBitsFromISR), (24 bytes).
+    Removing event_groups.o(i.xEventGroupSetBits), (200 bytes).
+    Removing event_groups.o(i.xEventGroupSync), (234 bytes).
+    Removing event_groups.o(i.xEventGroupWaitBits), (288 bytes).
+
+205 unused section(s) (total 19556 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    RESET                                    0x00000000   Section      192  startup_mkl46z4.o(RESET)
+    ../../../../../devices/MKL46Z4/arm/startup_MKL46Z4.s 0x00000000   Number         0  startup_mkl46z4.o ABSOLUTE
+    ../../../../../devices/MKL46Z4/drivers/fsl_clock.c 0x00000000   Number         0  fsl_clock.o ABSOLUTE
+    ../../../../../devices/MKL46Z4/drivers/fsl_common.c 0x00000000   Number         0  fsl_common.o ABSOLUTE
+    ../../../../../devices/MKL46Z4/drivers/fsl_gpio.c 0x00000000   Number         0  fsl_gpio.o ABSOLUTE
+    ../../../../../devices/MKL46Z4/drivers/fsl_lpsci.c 0x00000000   Number         0  fsl_lpsci.o ABSOLUTE
+    ../../../../../devices/MKL46Z4/drivers/fsl_smc.c 0x00000000   Number         0  fsl_smc.o ABSOLUTE
+    ../../../../../devices/MKL46Z4/drivers/fsl_uart.c 0x00000000   Number         0  fsl_uart.o ABSOLUTE
+    ../../../../../devices/MKL46Z4/system_MKL46Z4.c 0x00000000   Number         0  system_mkl46z4.o ABSOLUTE
+    ../../../../../devices/MKL46Z4/utilities/fsl_debug_console.c 0x00000000   Number         0  fsl_debug_console.o ABSOLUTE
+    ../../../../../rtos/freertos_8.2.3/Source/croutine.c 0x00000000   Number         0  croutine.o ABSOLUTE
+    ../../../../../rtos/freertos_8.2.3/Source/event_groups.c 0x00000000   Number         0  event_groups.o ABSOLUTE
+    ../../../../../rtos/freertos_8.2.3/Source/list.c 0x00000000   Number         0  list.o ABSOLUTE
+    ../../../../../rtos/freertos_8.2.3/Source/portable/MemMang/heap_4.c 0x00000000   Number         0  heap_4.o ABSOLUTE
+    ../../../../../rtos/freertos_8.2.3/Source/portable/RVDS/ARM_CM0/port.c 0x00000000   Number         0  port.o ABSOLUTE
+    ../../../../../rtos/freertos_8.2.3/Source/queue.c 0x00000000   Number         0  queue.o ABSOLUTE
+    ../../../../../rtos/freertos_8.2.3/Source/tasks.c 0x00000000   Number         0  tasks.o ABSOLUTE
+    ../../../../../rtos/freertos_8.2.3/Source/timers.c 0x00000000   Number         0  timers.o ABSOLUTE
+    ../board.c                               0x00000000   Number         0  board.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  idiv.o ABSOLUTE
+    ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry4.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
+    ../clib/microlib/string/strlen.c         0x00000000   Number         0  strlen.o ABSOLUTE
+    ../clock_config.c                        0x00000000   Number         0  clock_config.o ABSOLUTE
+    ../freertos_hello.c                      0x00000000   Number         0  freertos_hello.o ABSOLUTE
+    ../pin_mux.c                             0x00000000   Number         0  pin_mux.o ABSOLUTE
+    ..\..\..\..\..\devices\MKL46Z4\drivers\fsl_clock.c 0x00000000   Number         0  fsl_clock.o ABSOLUTE
+    ..\..\..\..\..\devices\MKL46Z4\drivers\fsl_common.c 0x00000000   Number         0  fsl_common.o ABSOLUTE
+    ..\..\..\..\..\devices\MKL46Z4\drivers\fsl_gpio.c 0x00000000   Number         0  fsl_gpio.o ABSOLUTE
+    ..\..\..\..\..\devices\MKL46Z4\drivers\fsl_i2c.c 0x00000000   Number         0  fsl_i2c.o ABSOLUTE
+    ..\..\..\..\..\devices\MKL46Z4\drivers\fsl_lpsci.c 0x00000000   Number         0  fsl_lpsci.o ABSOLUTE
+    ..\..\..\..\..\devices\MKL46Z4\drivers\fsl_smc.c 0x00000000   Number         0  fsl_smc.o ABSOLUTE
+    ..\..\..\..\..\devices\MKL46Z4\drivers\fsl_uart.c 0x00000000   Number         0  fsl_uart.o ABSOLUTE
+    ..\..\..\..\..\devices\MKL46Z4\system_MKL46Z4.c 0x00000000   Number         0  system_mkl46z4.o ABSOLUTE
+    ..\..\..\..\..\devices\MKL46Z4\utilities\fsl_debug_console.c 0x00000000   Number         0  fsl_debug_console.o ABSOLUTE
+    ..\..\..\..\..\rtos\freertos_8.2.3\Source\portable\RVDS\ARM_CM0\port.c 0x00000000   Number         0  port.o ABSOLUTE
+    ..\\..\\..\\..\\..\\devices\\MKL46Z4\\drivers\\fsl_i2c.c 0x00000000   Number         0  fsl_i2c.o ABSOLUTE
+    ..\board.c                               0x00000000   Number         0  board.o ABSOLUTE
+    ..\clock_config.c                        0x00000000   Number         0  clock_config.o ABSOLUTE
+    ..\freertos_hello.c                      0x00000000   Number         0  freertos_hello.o ABSOLUTE
+    ..\pin_mux.c                             0x00000000   Number         0  pin_mux.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    FlashConfig                              0x00000400   Section       16  startup_mkl46z4.o(FlashConfig)
+    .ARM.Collect$$$$00000000                 0x00000410   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000003                 0x00000410   Section        4  entry4.o(.ARM.Collect$$$$00000003)
+    .ARM.Collect$$$$00000004                 0x00000414   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x00000418   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x00000418   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x00000418   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    .ARM.Collect$$$$0000000D                 0x00000420   Section        0  entry10a.o(.ARM.Collect$$$$0000000D)
+    .ARM.Collect$$$$0000000F                 0x00000420   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00002714                 0x00000420   Section        4  entry4.o(.ARM.Collect$$$$00002714)
+    __lit__00000000                          0x00000420   Data           4  entry4.o(.ARM.Collect$$$$00002714)
+    .emb_text                                0x00000424   Section      112  port.o(.emb_text)
+    .text                                    0x00000494   Section      148  startup_mkl46z4.o(.text)
+    .text                                    0x00000528   Section        0  uidiv.o(.text)
+    .text                                    0x00000554   Section        0  idiv.o(.text)
+    .text                                    0x0000057c   Section        0  memcpya.o(.text)
+    .text                                    0x000005a0   Section        0  memseta.o(.text)
+    .text                                    0x000005c4   Section        0  strlen.o(.text)
+    .text                                    0x000005d4   Section       36  init.o(.text)
+    i.BOARD_BootClockRUN                     0x000005f8   Section        0  clock_config.o(i.BOARD_BootClockRUN)
+    i.BOARD_I2C_ConfigurePins                0x00000658   Section        0  pin_mux.o(i.BOARD_I2C_ConfigurePins)
+    i.BOARD_I2C_ReleaseBus                   0x000006c0   Section        0  freertos_hello.o(i.BOARD_I2C_ReleaseBus)
+    i.BOARD_InitDebugConsole                 0x000007a0   Section        0  board.o(i.BOARD_InitDebugConsole)
+    i.BOARD_InitPins                         0x000007dc   Section        0  pin_mux.o(i.BOARD_InitPins)
+    i.CLOCK_BootToPeeMode                    0x00000870   Section        0  fsl_clock.o(i.CLOCK_BootToPeeMode)
+    i.CLOCK_EnableClock                      0x000008fc   Section        0  fsl_i2c.o(i.CLOCK_EnableClock)
+    CLOCK_EnableClock                        0x000008fd   Thumb Code    18  fsl_i2c.o(i.CLOCK_EnableClock)
+    i.CLOCK_EnableClock                      0x00000914   Section        0  pin_mux.o(i.CLOCK_EnableClock)
+    CLOCK_EnableClock                        0x00000915   Thumb Code    18  pin_mux.o(i.CLOCK_EnableClock)
+    i.CLOCK_EnablePll0                       0x0000092c   Section        0  fsl_clock.o(i.CLOCK_EnablePll0)
+    i.CLOCK_GetCoreSysClkFreq                0x000009c4   Section        0  fsl_clock.o(i.CLOCK_GetCoreSysClkFreq)
+    i.CLOCK_GetEr32kClkFreq                  0x000009e0   Section        0  fsl_clock.o(i.CLOCK_GetEr32kClkFreq)
+    i.CLOCK_GetFixedFreqClkFreq              0x00000a88   Section        0  fsl_clock.o(i.CLOCK_GetFixedFreqClkFreq)
+    i.CLOCK_GetFllExtRefClkFreq              0x00000aa8   Section        0  fsl_clock.o(i.CLOCK_GetFllExtRefClkFreq)
+    CLOCK_GetFllExtRefClkFreq                0x00000aa9   Thumb Code   110  fsl_clock.o(i.CLOCK_GetFllExtRefClkFreq)
+    i.CLOCK_GetFllFreq                       0x00000b1c   Section        0  fsl_clock.o(i.CLOCK_GetFllFreq)
+    i.CLOCK_GetFllRefClkFreq                 0x00000b74   Section        0  fsl_clock.o(i.CLOCK_GetFllRefClkFreq)
+    CLOCK_GetFllRefClkFreq                   0x00000b75   Thumb Code    28  fsl_clock.o(i.CLOCK_GetFllRefClkFreq)
+    i.CLOCK_GetFreq                          0x00000b98   Section        0  fsl_clock.o(i.CLOCK_GetFreq)
+    i.CLOCK_GetInternalRefClkFreq            0x00000c48   Section        0  fsl_clock.o(i.CLOCK_GetInternalRefClkFreq)
+    i.CLOCK_GetInternalRefClkSelectFreq      0x00000c64   Section        0  fsl_clock.o(i.CLOCK_GetInternalRefClkSelectFreq)
+    CLOCK_GetInternalRefClkSelectFreq        0x00000c65   Thumb Code    36  fsl_clock.o(i.CLOCK_GetInternalRefClkSelectFreq)
+    i.CLOCK_GetMcgExtClkFreq                 0x00000c94   Section        0  fsl_clock.o(i.CLOCK_GetMcgExtClkFreq)
+    CLOCK_GetMcgExtClkFreq                   0x00000c95   Thumb Code    28  fsl_clock.o(i.CLOCK_GetMcgExtClkFreq)
+    i.CLOCK_GetOsc0ErClkFreq                 0x00000cf4   Section        0  fsl_clock.o(i.CLOCK_GetOsc0ErClkFreq)
+    i.CLOCK_GetOscRangeFromFreq              0x00000d6c   Section        0  fsl_clock.o(i.CLOCK_GetOscRangeFromFreq)
+    CLOCK_GetOscRangeFromFreq                0x00000d6d   Thumb Code    26  fsl_clock.o(i.CLOCK_GetOscRangeFromFreq)
+    i.CLOCK_GetOutClkFreq                    0x00000d90   Section        0  fsl_clock.o(i.CLOCK_GetOutClkFreq)
+    i.CLOCK_GetPll0Freq                      0x00000dd0   Section        0  fsl_clock.o(i.CLOCK_GetPll0Freq)
+    i.CLOCK_GetPll0RefFreq                   0x00000e60   Section        0  fsl_clock.o(i.CLOCK_GetPll0RefFreq)
+    CLOCK_GetPll0RefFreq                     0x00000e61   Thumb Code     8  fsl_clock.o(i.CLOCK_GetPll0RefFreq)
+    i.CLOCK_GetPllFllSelClkFreq              0x00000e68   Section        0  fsl_clock.o(i.CLOCK_GetPllFllSelClkFreq)
+    i.CLOCK_InitOsc0                         0x00000ea0   Section        0  fsl_clock.o(i.CLOCK_InitOsc0)
+    i.CLOCK_SetExternalRefClkConfig          0x00000f18   Section        0  fsl_clock.o(i.CLOCK_SetExternalRefClkConfig)
+    i.CLOCK_SetInternalRefClkConfig          0x00000f40   Section        0  fsl_clock.o(i.CLOCK_SetInternalRefClkConfig)
+    i.CLOCK_SetPbeMode                       0x00000fec   Section        0  fsl_clock.o(i.CLOCK_SetPbeMode)
+    i.CLOCK_SetSimConfig                     0x0000105c   Section        0  fsl_clock.o(i.CLOCK_SetSimConfig)
+    i.DbgConsole_ConvertRadixNumToString     0x000010ac   Section        0  fsl_debug_console.o(i.DbgConsole_ConvertRadixNumToString)
+    DbgConsole_ConvertRadixNumToString       0x000010ad   Thumb Code   196  fsl_debug_console.o(i.DbgConsole_ConvertRadixNumToString)
+    i.DbgConsole_Init                        0x00001170   Section        0  fsl_debug_console.o(i.DbgConsole_Init)
+    i.DbgConsole_Printf                      0x00001278   Section        0  fsl_debug_console.o(i.DbgConsole_Printf)
+    i.DbgConsole_PrintfFormattedData         0x000012b0   Section        0  fsl_debug_console.o(i.DbgConsole_PrintfFormattedData)
+    DbgConsole_PrintfFormattedData           0x000012b1   Thumb Code   620  fsl_debug_console.o(i.DbgConsole_PrintfFormattedData)
+    i.DbgConsole_PrintfPaddingCharacter      0x0000151c   Section        0  fsl_debug_console.o(i.DbgConsole_PrintfPaddingCharacter)
+    DbgConsole_PrintfPaddingCharacter        0x0000151d   Thumb Code    36  fsl_debug_console.o(i.DbgConsole_PrintfPaddingCharacter)
+    i.DbgConsole_Putchar                     0x00001540   Section        0  fsl_debug_console.o(i.DbgConsole_Putchar)
+    i.EnableIRQ                              0x00001564   Section        0  fsl_i2c.o(i.EnableIRQ)
+    EnableIRQ                                0x00001565   Thumb Code    18  fsl_i2c.o(i.EnableIRQ)
+    i.GPIO_PinInit                           0x0000157c   Section        0  fsl_gpio.o(i.GPIO_PinInit)
+    i.GPIO_WritePinOutput                    0x00001608   Section        0  freertos_hello.o(i.GPIO_WritePinOutput)
+    GPIO_WritePinOutput                      0x00001609   Thumb Code    20  freertos_hello.o(i.GPIO_WritePinOutput)
+    i.I2C0_DriverIRQHandler                  0x0000161c   Section        0  fsl_i2c.o(i.I2C0_DriverIRQHandler)
+    i.I2C1_DriverIRQHandler                  0x00001634   Section        0  fsl_i2c.o(i.I2C1_DriverIRQHandler)
+    i.I2C_CheckAndClearError                 0x0000164c   Section        0  fsl_i2c.o(i.I2C_CheckAndClearError)
+    I2C_CheckAndClearError                   0x0000164d   Thumb Code    34  fsl_i2c.o(i.I2C_CheckAndClearError)
+    i.I2C_DisableInterrupts                  0x00001674   Section        0  fsl_i2c.o(i.I2C_DisableInterrupts)
+    i.I2C_EnableInterrupts                   0x00001696   Section        0  fsl_i2c.o(i.I2C_EnableInterrupts)
+    i.I2C_GetInstance                        0x000016c4   Section        0  fsl_i2c.o(i.I2C_GetInstance)
+    i.I2C_InitTransferStateMachine           0x00001754   Section        0  fsl_i2c.o(i.I2C_InitTransferStateMachine)
+    I2C_InitTransferStateMachine             0x00001755   Thumb Code   142  fsl_i2c.o(i.I2C_InitTransferStateMachine)
+    i.I2C_MasterClearStatusFlags             0x000017ec   Section        0  fsl_i2c.o(i.I2C_MasterClearStatusFlags)
+    I2C_MasterClearStatusFlags               0x000017ed   Thumb Code    44  fsl_i2c.o(i.I2C_MasterClearStatusFlags)
+    i.I2C_MasterGetDefaultConfig             0x00001818   Section        0  fsl_i2c.o(i.I2C_MasterGetDefaultConfig)
+    i.I2C_MasterGetStatusFlags               0x00001888   Section        0  fsl_i2c.o(i.I2C_MasterGetStatusFlags)
+    i.I2C_MasterInit                         0x000018ac   Section        0  fsl_i2c.o(i.I2C_MasterInit)
+    i.I2C_MasterRepeatedStart                0x00001990   Section        0  fsl_i2c.o(i.I2C_MasterRepeatedStart)
+    i.I2C_MasterSetBaudRate                  0x000019fc   Section        0  fsl_i2c.o(i.I2C_MasterSetBaudRate)
+    i.I2C_MasterStart                        0x00001a88   Section        0  fsl_i2c.o(i.I2C_MasterStart)
+    i.I2C_MasterStop                         0x00001acc   Section        0  fsl_i2c.o(i.I2C_MasterStop)
+    i.I2C_MasterTransferCreateHandle         0x00001b00   Section        0  fsl_i2c.o(i.I2C_MasterTransferCreateHandle)
+    i.I2C_MasterTransferHandleIRQ            0x00001b94   Section        0  fsl_i2c.o(i.I2C_MasterTransferHandleIRQ)
+    i.I2C_MasterTransferNonBlocking          0x00001c60   Section        0  fsl_i2c.o(i.I2C_MasterTransferNonBlocking)
+    i.I2C_MasterTransferRunStateMachine      0x00001cfc   Section        0  fsl_i2c.o(i.I2C_MasterTransferRunStateMachine)
+    I2C_MasterTransferRunStateMachine        0x00001cfd   Thumb Code   366  fsl_i2c.o(i.I2C_MasterTransferRunStateMachine)
+    i.I2C_ReadAccelRegs                      0x00001e70   Section        0  freertos_hello.o(i.I2C_ReadAccelRegs)
+    I2C_ReadAccelRegs                        0x00001e71   Thumb Code    98  freertos_hello.o(i.I2C_ReadAccelRegs)
+    i.I2C_ReadAccelWhoAmI                    0x00001ee4   Section        0  freertos_hello.o(i.I2C_ReadAccelWhoAmI)
+    I2C_ReadAccelWhoAmI                      0x00001ee5   Thumb Code   348  freertos_hello.o(i.I2C_ReadAccelWhoAmI)
+    i.I2C_TransferCommonIRQHandler           0x00002198   Section        0  fsl_i2c.o(i.I2C_TransferCommonIRQHandler)
+    I2C_TransferCommonIRQHandler             0x00002199   Thumb Code    50  fsl_i2c.o(i.I2C_TransferCommonIRQHandler)
+    i.I2C_WriteAccelReg                      0x000021d4   Section        0  freertos_hello.o(i.I2C_WriteAccelReg)
+    I2C_WriteAccelReg                        0x000021d5   Thumb Code   102  freertos_hello.o(i.I2C_WriteAccelReg)
+    i.LPSCI_ClearStatusFlags                 0x0000224c   Section        0  fsl_lpsci.o(i.LPSCI_ClearStatusFlags)
+    i.LPSCI_GetDefaultConfig                 0x000022ac   Section        0  fsl_lpsci.o(i.LPSCI_GetDefaultConfig)
+    i.LPSCI_GetInstance                      0x00002310   Section        0  fsl_lpsci.o(i.LPSCI_GetInstance)
+    i.LPSCI_GetStatusFlags                   0x000023a0   Section        0  fsl_lpsci.o(i.LPSCI_GetStatusFlags)
+    i.LPSCI_Init                             0x000023b0   Section        0  fsl_lpsci.o(i.LPSCI_Init)
+    i.LPSCI_ReadBlocking                     0x00002584   Section        0  fsl_lpsci.o(i.LPSCI_ReadBlocking)
+    i.LPSCI_WriteBlocking                    0x0000265c   Section        0  fsl_lpsci.o(i.LPSCI_WriteBlocking)
+    i.PORT_SetPinConfig                      0x000026d4   Section        0  freertos_hello.o(i.PORT_SetPinConfig)
+    PORT_SetPinConfig                        0x000026d5   Thumb Code    34  freertos_hello.o(i.PORT_SetPinConfig)
+    i.PORT_SetPinConfig                      0x00002734   Section        0  pin_mux.o(i.PORT_SetPinConfig)
+    PORT_SetPinConfig                        0x00002735   Thumb Code    34  pin_mux.o(i.PORT_SetPinConfig)
+    i.PORT_SetPinMux                         0x00002794   Section        0  pin_mux.o(i.PORT_SetPinMux)
+    PORT_SetPinMux                           0x00002795   Thumb Code    28  pin_mux.o(i.PORT_SetPinMux)
+    i.SVC_Handler                            0x000027b0   Section        0  port.o(i.SVC_Handler)
+    i.SysTick_Handler                        0x000027b4   Section        0  port.o(i.SysTick_Handler)
+    i.SystemInit                             0x000027d8   Section        0  system_mkl46z4.o(i.SystemInit)
+    i.UART0_DriverIRQHandler                 0x000027e4   Section        0  fsl_lpsci.o(i.UART0_DriverIRQHandler)
+    i.UART1_DriverIRQHandler                 0x00002800   Section        0  fsl_uart.o(i.UART1_DriverIRQHandler)
+    i.UART2_DriverIRQHandler                 0x0000281c   Section        0  fsl_uart.o(i.UART2_DriverIRQHandler)
+    i.UART_GetDefaultConfig                  0x00002838   Section        0  fsl_uart.o(i.UART_GetDefaultConfig)
+    i.UART_GetInstance                       0x0000289c   Section        0  fsl_uart.o(i.UART_GetInstance)
+    i.UART_GetStatusFlags                    0x00002924   Section        0  fsl_uart.o(i.UART_GetStatusFlags)
+    i.UART_Init                              0x00002934   Section        0  fsl_uart.o(i.UART_Init)
+    i.UART_ReadBlocking                      0x00002aa8   Section        0  fsl_uart.o(i.UART_ReadBlocking)
+    i.UART_WriteBlocking                     0x00002b64   Section        0  fsl_uart.o(i.UART_WriteBlocking)
+    i.__ARM_common_switch8                   0x00002b84   Section        0  system_mkl46z4.o(i.__ARM_common_switch8)
+    i.__aeabi_assert                         0x00002ba0   Section        0  fsl_common.o(i.__aeabi_assert)
+    i.__scatterload_copy                     0x00002be4   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x00002bf2   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x00002bf4   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.accelerometer_task                     0x00002c04   Section        0  freertos_hello.o(i.accelerometer_task)
+    accelerometer_task                       0x00002c05   Thumb Code   272  freertos_hello.o(i.accelerometer_task)
+    i.hello_task                             0x00002db4   Section        0  freertos_hello.o(i.hello_task)
+    hello_task                               0x00002db5   Thumb Code    66  freertos_hello.o(i.hello_task)
+    i.i2c_master_callback                    0x00002e40   Section        0  freertos_hello.o(i.i2c_master_callback)
+    i2c_master_callback                      0x00002e41   Thumb Code    26  freertos_hello.o(i.i2c_master_callback)
+    i.i2c_release_bus_delay                  0x00002e68   Section        0  freertos_hello.o(i.i2c_release_bus_delay)
+    i2c_release_bus_delay                    0x00002e69   Thumb Code    16  freertos_hello.o(i.i2c_release_bus_delay)
+    i.main                                   0x00002e78   Section        0  freertos_hello.o(i.main)
+    i.prvAddCurrentTaskToDelayedList         0x00002ef0   Section        0  tasks.o(i.prvAddCurrentTaskToDelayedList)
+    prvAddCurrentTaskToDelayedList           0x00002ef1   Thumb Code    62  tasks.o(i.prvAddCurrentTaskToDelayedList)
+    i.prvAllocateTCBAndStack                 0x00002f44   Section        0  tasks.o(i.prvAllocateTCBAndStack)
+    prvAllocateTCBAndStack                   0x00002f45   Thumb Code    70  tasks.o(i.prvAllocateTCBAndStack)
+    i.prvCheckForValidListAndQueue           0x00002f8c   Section        0  timers.o(i.prvCheckForValidListAndQueue)
+    prvCheckForValidListAndQueue             0x00002f8d   Thumb Code    90  timers.o(i.prvCheckForValidListAndQueue)
+    i.prvCheckTasksWaitingTermination        0x00003004   Section        0  tasks.o(i.prvCheckTasksWaitingTermination)
+    prvCheckTasksWaitingTermination          0x00003005   Thumb Code    90  tasks.o(i.prvCheckTasksWaitingTermination)
+    i.prvCopyDataFromQueue                   0x0000306c   Section        0  queue.o(i.prvCopyDataFromQueue)
+    prvCopyDataFromQueue                     0x0000306d   Thumb Code    44  queue.o(i.prvCopyDataFromQueue)
+    i.prvCopyDataToQueue                     0x00003098   Section        0  queue.o(i.prvCopyDataToQueue)
+    prvCopyDataToQueue                       0x00003099   Thumb Code   132  queue.o(i.prvCopyDataToQueue)
+    i.prvDeleteTCB                           0x0000311c   Section        0  tasks.o(i.prvDeleteTCB)
+    prvDeleteTCB                             0x0000311d   Thumb Code    18  tasks.o(i.prvDeleteTCB)
+    i.prvGetNextExpireTime                   0x00003130   Section        0  timers.o(i.prvGetNextExpireTime)
+    prvGetNextExpireTime                     0x00003131   Thumb Code    40  timers.o(i.prvGetNextExpireTime)
+    i.prvHeapInit                            0x0000315c   Section        0  heap_4.o(i.prvHeapInit)
+    prvHeapInit                              0x0000315d   Thumb Code   100  heap_4.o(i.prvHeapInit)
+    i.prvIdleTask                            0x000031d8   Section        0  tasks.o(i.prvIdleTask)
+    prvIdleTask                              0x000031d9   Thumb Code    20  tasks.o(i.prvIdleTask)
+    i.prvInitialiseTCBVariables              0x000031f0   Section        0  tasks.o(i.prvInitialiseTCBVariables)
+    prvInitialiseTCBVariables                0x000031f1   Thumb Code    92  tasks.o(i.prvInitialiseTCBVariables)
+    i.prvInitialiseTaskLists                 0x0000324c   Section        0  tasks.o(i.prvInitialiseTaskLists)
+    prvInitialiseTaskLists                   0x0000324d   Thumb Code    68  tasks.o(i.prvInitialiseTaskLists)
+    i.prvInsertBlockIntoFreeList             0x000032b0   Section        0  heap_4.o(i.prvInsertBlockIntoFreeList)
+    prvInsertBlockIntoFreeList               0x000032b1   Thumb Code    96  heap_4.o(i.prvInsertBlockIntoFreeList)
+    i.prvInsertTimerInActiveList             0x00003318   Section        0  timers.o(i.prvInsertTimerInActiveList)
+    prvInsertTimerInActiveList               0x00003319   Thumb Code    76  timers.o(i.prvInsertTimerInActiveList)
+    i.prvIsQueueEmpty                        0x0000336c   Section        0  queue.o(i.prvIsQueueEmpty)
+    prvIsQueueEmpty                          0x0000336d   Thumb Code    28  queue.o(i.prvIsQueueEmpty)
+    i.prvIsQueueFull                         0x00003388   Section        0  queue.o(i.prvIsQueueFull)
+    prvIsQueueFull                           0x00003389   Thumb Code    30  queue.o(i.prvIsQueueFull)
+    i.prvProcessExpiredTimer                 0x000033a8   Section        0  timers.o(i.prvProcessExpiredTimer)
+    prvProcessExpiredTimer                   0x000033a9   Thumb Code    82  timers.o(i.prvProcessExpiredTimer)
+    i.prvProcessReceivedCommands             0x00003400   Section        0  timers.o(i.prvProcessReceivedCommands)
+    prvProcessReceivedCommands               0x00003401   Thumb Code   222  timers.o(i.prvProcessReceivedCommands)
+    i.prvProcessTimerOrBlockTask             0x000034e4   Section        0  timers.o(i.prvProcessTimerOrBlockTask)
+    prvProcessTimerOrBlockTask               0x000034e5   Thumb Code   100  timers.o(i.prvProcessTimerOrBlockTask)
+    i.prvResetNextTaskUnblockTime            0x00003550   Section        0  tasks.o(i.prvResetNextTaskUnblockTime)
+    prvResetNextTaskUnblockTime              0x00003551   Thumb Code    46  tasks.o(i.prvResetNextTaskUnblockTime)
+    i.prvSampleTimeNow                       0x00003588   Section        0  timers.o(i.prvSampleTimeNow)
+    prvSampleTimeNow                         0x00003589   Thumb Code    40  timers.o(i.prvSampleTimeNow)
+    i.prvSetupTimerInterrupt                 0x000035b4   Section        0  port.o(i.prvSetupTimerInterrupt)
+    prvSetupTimerInterrupt                   0x000035b5   Thumb Code    30  port.o(i.prvSetupTimerInterrupt)
+    i.prvSwitchTimerLists                    0x000035dc   Section        0  timers.o(i.prvSwitchTimerLists)
+    prvSwitchTimerLists                      0x000035dd   Thumb Code   134  timers.o(i.prvSwitchTimerLists)
+    i.prvTaskExitError                       0x0000366c   Section        0  port.o(i.prvTaskExitError)
+    prvTaskExitError                         0x0000366d   Thumb Code    32  port.o(i.prvTaskExitError)
+    i.prvTimerTask                           0x00003690   Section        0  timers.o(i.prvTimerTask)
+    prvTimerTask                             0x00003691   Thumb Code    26  timers.o(i.prvTimerTask)
+    i.prvUnlockQueue                         0x000036aa   Section        0  queue.o(i.prvUnlockQueue)
+    prvUnlockQueue                           0x000036ab   Thumb Code   138  queue.o(i.prvUnlockQueue)
+    i.pvPortMalloc                           0x00003734   Section        0  heap_4.o(i.pvPortMalloc)
+    i.pvTaskIncrementMutexHeldCount          0x00003850   Section        0  tasks.o(i.pvTaskIncrementMutexHeldCount)
+    i.pxPortInitialiseStack                  0x00003870   Section        0  port.o(i.pxPortInitialiseStack)
+    i.uxListRemove                           0x00003890   Section        0  list.o(i.uxListRemove)
+    i.vListInitialise                        0x000038b8   Section        0  list.o(i.vListInitialise)
+    i.vListInitialiseItem                    0x000038d2   Section        0  list.o(i.vListInitialiseItem)
+    i.vListInsert                            0x000038d8   Section        0  list.o(i.vListInsert)
+    i.vListInsertEnd                         0x0000390e   Section        0  list.o(i.vListInsertEnd)
+    i.vPortEnterCritical                     0x00003928   Section        0  port.o(i.vPortEnterCritical)
+    i.vPortExitCritical                      0x00003944   Section        0  port.o(i.vPortExitCritical)
+    i.vPortFree                              0x0000396c   Section        0  heap_4.o(i.vPortFree)
+    i.vPortYield                             0x000039ec   Section        0  port.o(i.vPortYield)
+    i.vQueueAddToRegistry                    0x00003a04   Section        0  queue.o(i.vQueueAddToRegistry)
+    i.vQueueWaitForMessageRestricted         0x00003a30   Section        0  queue.o(i.vQueueWaitForMessageRestricted)
+    i.vTaskDelay                             0x00003a70   Section        0  tasks.o(i.vTaskDelay)
+    i.vTaskMissedYield                       0x00003ac8   Section        0  tasks.o(i.vTaskMissedYield)
+    i.vTaskPlaceOnEventList                  0x00003ad4   Section        0  tasks.o(i.vTaskPlaceOnEventList)
+    i.vTaskPlaceOnEventListRestricted        0x00003b28   Section        0  tasks.o(i.vTaskPlaceOnEventListRestricted)
+    i.vTaskPriorityInherit                   0x00003b7c   Section        0  tasks.o(i.vTaskPriorityInherit)
+    i.vTaskSetTimeOutState                   0x00003c08   Section        0  tasks.o(i.vTaskSetTimeOutState)
+    i.vTaskStartScheduler                    0x00003c28   Section        0  tasks.o(i.vTaskStartScheduler)
+    i.vTaskSuspendAll                        0x00003c90   Section        0  tasks.o(i.vTaskSuspendAll)
+    i.vTaskSwitchContext                     0x00003ca0   Section        0  tasks.o(i.vTaskSwitchContext)
+    i.xPortStartScheduler                    0x00003d2c   Section        0  port.o(i.xPortStartScheduler)
+    i.xQueueGenericCreate                    0x00003d64   Section        0  queue.o(i.xQueueGenericCreate)
+    i.xQueueGenericReceive                   0x00003dd4   Section        0  queue.o(i.xQueueGenericReceive)
+    i.xQueueGenericReset                     0x00003f44   Section        0  queue.o(i.xQueueGenericReset)
+    i.xQueueGenericSend                      0x00003fc2   Section        0  queue.o(i.xQueueGenericSend)
+    i.xQueueGenericSendFromISR               0x00004110   Section        0  queue.o(i.xQueueGenericSendFromISR)
+    i.xTaskCheckForTimeOut                   0x000041c4   Section        0  tasks.o(i.xTaskCheckForTimeOut)
+    i.xTaskGenericCreate                     0x00004238   Section        0  tasks.o(i.xTaskGenericCreate)
+    i.xTaskGetSchedulerState                 0x00004370   Section        0  tasks.o(i.xTaskGetSchedulerState)
+    i.xTaskGetTickCount                      0x00004394   Section        0  tasks.o(i.xTaskGetTickCount)
+    i.xTaskIncrementTick                     0x000043a0   Section        0  tasks.o(i.xTaskIncrementTick)
+    i.xTaskPriorityDisinherit                0x000044c8   Section        0  tasks.o(i.xTaskPriorityDisinherit)
+    i.xTaskRemoveFromEventList               0x00004550   Section        0  tasks.o(i.xTaskRemoveFromEventList)
+    i.xTaskResumeAll                         0x000045d8   Section        0  tasks.o(i.xTaskResumeAll)
+    i.xTimerCreateTimerTask                  0x000046c4   Section        0  timers.o(i.xTimerCreateTimerTask)
+    i.xTimerGenericCommand                   0x00004710   Section        0  timers.o(i.xTimerGenericCommand)
+    .constdata                               0x00004784   Section       12  fsl_lpsci.o(.constdata)
+    s_lpsciBases                             0x00004784   Data           4  fsl_lpsci.o(.constdata)
+    s_lpsciIRQ                               0x00004788   Data           1  fsl_lpsci.o(.constdata)
+    s_lpsciClock                             0x0000478c   Data           4  fsl_lpsci.o(.constdata)
+    .constdata                               0x00004790   Section       28  fsl_uart.o(.constdata)
+    s_uartBases                              0x00004790   Data          12  fsl_uart.o(.constdata)
+    s_uartIRQ                                0x0000479c   Data           3  fsl_uart.o(.constdata)
+    s_uartClock                              0x000047a0   Data          12  fsl_uart.o(.constdata)
+    .constdata                               0x000047ac   Section       96  fsl_clock.o(.constdata)
+    mcgModeMatrix                            0x000047ac   Data          64  fsl_clock.o(.constdata)
+    fllFactorTable                           0x000047ec   Data          16  fsl_clock.o(.constdata)
+    trimRange                                0x000047fc   Data          16  fsl_clock.o(.constdata)
+    .constdata                               0x0000480c   Section      148  fsl_i2c.o(.constdata)
+    s_i2cDividerTable                        0x0000480c   Data         128  fsl_i2c.o(.constdata)
+    s_i2cBases                               0x0000488c   Data           8  fsl_i2c.o(.constdata)
+    s_i2cIrqs                                0x00004894   Data           2  fsl_i2c.o(.constdata)
+    s_i2cClocks                              0x00004898   Data           8  fsl_i2c.o(.constdata)
+    .constdata                               0x000048a0   Section        4  freertos_hello.o(.constdata)
+    .constdata                               0x000048a4   Section       64  clock_config.o(.constdata)
+    .data                                    0x1fffe000   Section        4  system_mkl46z4.o(.data)
+    .data                                    0x1fffe004   Section        4  port.o(.data)
+    uxCriticalNesting                        0x1fffe004   Data           4  port.o(.data)
+    .data                                    0x1fffe008   Section        8  fsl_lpsci.o(.data)
+    s_lpsciHandle                            0x1fffe008   Data           4  fsl_lpsci.o(.data)
+    s_lpsciIsr                               0x1fffe00c   Data           4  fsl_lpsci.o(.data)
+    .data                                    0x1fffe010   Section        4  fsl_uart.o(.data)
+    s_uartIsr                                0x1fffe010   Data           4  fsl_uart.o(.data)
+    .data                                    0x1fffe014   Section       16  fsl_clock.o(.data)
+    s_slowIrcFreq                            0x1fffe014   Data           4  fsl_clock.o(.data)
+    s_fastIrcFreq                            0x1fffe018   Data           4  fsl_clock.o(.data)
+    .data                                    0x1fffe024   Section       16  fsl_i2c.o(.data)
+    s_i2cHandle                              0x1fffe024   Data           8  fsl_i2c.o(.data)
+    s_i2cMasterIsr                           0x1fffe02c   Data           4  fsl_i2c.o(.data)
+    s_i2cSlaveIsr                            0x1fffe030   Data           4  fsl_i2c.o(.data)
+    .data                                    0x1fffe034   Section        3  freertos_hello.o(.data)
+    .data                                    0x1fffe038   Section       24  heap_4.o(.data)
+    xStart                                   0x1fffe038   Data           8  heap_4.o(.data)
+    pxEnd                                    0x1fffe040   Data           4  heap_4.o(.data)
+    xFreeBytesRemaining                      0x1fffe044   Data           4  heap_4.o(.data)
+    xMinimumEverFreeBytesRemaining           0x1fffe048   Data           4  heap_4.o(.data)
+    xBlockAllocatedBit                       0x1fffe04c   Data           4  heap_4.o(.data)
+    .data                                    0x1fffe050   Section       56  tasks.o(.data)
+    pxDelayedTaskList                        0x1fffe054   Data           4  tasks.o(.data)
+    pxOverflowDelayedTaskList                0x1fffe058   Data           4  tasks.o(.data)
+    uxTasksDeleted                           0x1fffe05c   Data           4  tasks.o(.data)
+    uxCurrentNumberOfTasks                   0x1fffe060   Data           4  tasks.o(.data)
+    xTickCount                               0x1fffe064   Data           4  tasks.o(.data)
+    uxTopReadyPriority                       0x1fffe068   Data           4  tasks.o(.data)
+    xSchedulerRunning                        0x1fffe06c   Data           4  tasks.o(.data)
+    uxPendedTicks                            0x1fffe070   Data           4  tasks.o(.data)
+    xYieldPending                            0x1fffe074   Data           4  tasks.o(.data)
+    xNumOfOverflows                          0x1fffe078   Data           4  tasks.o(.data)
+    uxTaskNumber                             0x1fffe07c   Data           4  tasks.o(.data)
+    xNextTaskUnblockTime                     0x1fffe080   Data           4  tasks.o(.data)
+    uxSchedulerSuspended                     0x1fffe084   Data           4  tasks.o(.data)
+    .data                                    0x1fffe088   Section       16  timers.o(.data)
+    pxCurrentTimerList                       0x1fffe088   Data           4  timers.o(.data)
+    pxOverflowTimerList                      0x1fffe08c   Data           4  timers.o(.data)
+    xTimerQueue                              0x1fffe090   Data           4  timers.o(.data)
+    xLastTime                                0x1fffe094   Data           4  timers.o(.data)
+    .bss                                     0x1fffe098   Section       12  fsl_uart.o(.bss)
+    s_uartHandle                             0x1fffe098   Data          12  fsl_uart.o(.bss)
+    .bss                                     0x1fffe0a4   Section       40  freertos_hello.o(.bss)
+    .bss                                     0x1fffe0cc   Section       16  fsl_debug_console.o(.bss)
+    s_debugConsole                           0x1fffe0cc   Data          16  fsl_debug_console.o(.bss)
+    .bss                                     0x1fffe0dc   Section    10240  heap_4.o(.bss)
+    ucHeap                                   0x1fffe0dc   Data       10240  heap_4.o(.bss)
+    .bss                                     0x200008dc   Section       64  queue.o(.bss)
+    .bss                                     0x2000091c   Section      200  tasks.o(.bss)
+    pxReadyTasksLists                        0x2000091c   Data         100  tasks.o(.bss)
+    xDelayedTaskList1                        0x20000980   Data          20  tasks.o(.bss)
+    xDelayedTaskList2                        0x20000994   Data          20  tasks.o(.bss)
+    xPendingReadyList                        0x200009a8   Data          20  tasks.o(.bss)
+    xTasksWaitingTermination                 0x200009bc   Data          20  tasks.o(.bss)
+    xSuspendedTaskList                       0x200009d0   Data          20  tasks.o(.bss)
+    .bss                                     0x200009e4   Section       40  timers.o(.bss)
+    xActiveTimerList1                        0x200009e4   Data          20  timers.o(.bss)
+    xActiveTimerList2                        0x200009f8   Data          20  timers.o(.bss)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv3M$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    Image$$VECTOR_RAM$$Base                  0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    Image$$VECTOR_ROM$$Base                  0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  freertos_hello.o ABSOLUTE
+    __Vectors                                0x00000000   Data           4  startup_mkl46z4.o(RESET)
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    __Vectors_End                            0x000000c0   Data           0  startup_mkl46z4.o(RESET)
+    __Vectors_Size                           0x000000c0   Number         0  startup_mkl46z4.o ABSOLUTE
+    __main                                   0x00000411   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x00000411   Thumb Code     0  entry4.o(.ARM.Collect$$$$00000003)
+    _main_scatterload                        0x00000415   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x00000419   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x00000419   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x00000419   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x00000419   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_final_cpp                           0x00000421   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
+    __rt_final_exit                          0x00000421   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
+    __asm___6_port_c_39a90d8d__prvPortStartFirstTask 0x00000425   Thumb Code    28  port.o(.emb_text)
+    ulSetInterruptMaskFromISR                0x00000445   Thumb Code     8  port.o(.emb_text)
+    vClearInterruptMaskFromISR               0x0000044d   Thumb Code     6  port.o(.emb_text)
+    PendSV_Handler                           0x00000453   Thumb Code    62  port.o(.emb_text)
+    Reset_Handler                            0x00000495   Thumb Code    18  startup_mkl46z4.o(.text)
+    NMI_Handler                              0x000004a7   Thumb Code     2  startup_mkl46z4.o(.text)
+    HardFault_Handler                        0x000004a9   Thumb Code     2  startup_mkl46z4.o(.text)
+    DMA0_IRQHandler                          0x000004b1   Thumb Code     4  startup_mkl46z4.o(.text)
+    DMA1_IRQHandler                          0x000004b5   Thumb Code     4  startup_mkl46z4.o(.text)
+    DMA2_IRQHandler                          0x000004b9   Thumb Code     4  startup_mkl46z4.o(.text)
+    DMA3_IRQHandler                          0x000004bd   Thumb Code     4  startup_mkl46z4.o(.text)
+    I2C0_IRQHandler                          0x000004c1   Thumb Code     4  startup_mkl46z4.o(.text)
+    I2C1_IRQHandler                          0x000004c5   Thumb Code     4  startup_mkl46z4.o(.text)
+    SPI0_IRQHandler                          0x000004c9   Thumb Code     4  startup_mkl46z4.o(.text)
+    SPI1_IRQHandler                          0x000004cd   Thumb Code     4  startup_mkl46z4.o(.text)
+    UART0_IRQHandler                         0x000004d1   Thumb Code     4  startup_mkl46z4.o(.text)
+    UART1_IRQHandler                         0x000004d5   Thumb Code     4  startup_mkl46z4.o(.text)
+    UART2_IRQHandler                         0x000004d9   Thumb Code     4  startup_mkl46z4.o(.text)
+    I2S0_IRQHandler                          0x000004dd   Thumb Code     4  startup_mkl46z4.o(.text)
+    ADC0_IRQHandler                          0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    CMP0_IRQHandler                          0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    DAC0_IRQHandler                          0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    DMA0_DriverIRQHandler                    0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    DMA1_DriverIRQHandler                    0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    DMA2_DriverIRQHandler                    0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    DMA3_DriverIRQHandler                    0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    DefaultISR                               0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    FTFA_IRQHandler                          0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    I2S0_DriverIRQHandler                    0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    LCD_IRQHandler                           0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    LLWU_IRQHandler                          0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    LPTMR0_IRQHandler                        0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    LVD_LVW_IRQHandler                       0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    MCG_IRQHandler                           0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    PIT_IRQHandler                           0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    PORTA_IRQHandler                         0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    PORTC_PORTD_IRQHandler                   0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    RTC_IRQHandler                           0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    RTC_Seconds_IRQHandler                   0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    Reserved20_IRQHandler                    0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    SPI0_DriverIRQHandler                    0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    SPI1_DriverIRQHandler                    0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    TPM0_IRQHandler                          0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    TPM1_IRQHandler                          0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    TPM2_IRQHandler                          0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    TSI0_IRQHandler                          0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    USB0_IRQHandler                          0x000004e1   Thumb Code     0  startup_mkl46z4.o(.text)
+    __aeabi_uidiv                            0x00000529   Thumb Code     0  uidiv.o(.text)
+    __aeabi_uidivmod                         0x00000529   Thumb Code    44  uidiv.o(.text)
+    __aeabi_idiv                             0x00000555   Thumb Code     0  idiv.o(.text)
+    __aeabi_idivmod                          0x00000555   Thumb Code    40  idiv.o(.text)
+    __aeabi_memcpy                           0x0000057d   Thumb Code    36  memcpya.o(.text)
+    __aeabi_memcpy4                          0x0000057d   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memcpy8                          0x0000057d   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memset                           0x000005a1   Thumb Code    14  memseta.o(.text)
+    __aeabi_memset4                          0x000005a1   Thumb Code     0  memseta.o(.text)
+    __aeabi_memset8                          0x000005a1   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr                           0x000005af   Thumb Code     4  memseta.o(.text)
+    __aeabi_memclr4                          0x000005af   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr8                          0x000005af   Thumb Code     0  memseta.o(.text)
+    _memset$wrapper                          0x000005b3   Thumb Code    18  memseta.o(.text)
+    strlen                                   0x000005c5   Thumb Code    14  strlen.o(.text)
+    __scatterload                            0x000005d5   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x000005d5   Thumb Code     0  init.o(.text)
+    BOARD_BootClockRUN                       0x000005f9   Thumb Code    72  clock_config.o(i.BOARD_BootClockRUN)
+    BOARD_I2C_ConfigurePins                  0x00000659   Thumb Code    94  pin_mux.o(i.BOARD_I2C_ConfigurePins)
+    BOARD_I2C_ReleaseBus                     0x000006c1   Thumb Code   214  freertos_hello.o(i.BOARD_I2C_ReleaseBus)
+    BOARD_InitDebugConsole                   0x000007a1   Thumb Code    52  board.o(i.BOARD_InitDebugConsole)
+    BOARD_InitPins                           0x000007dd   Thumb Code   122  pin_mux.o(i.BOARD_InitPins)
+    CLOCK_BootToPeeMode                      0x00000871   Thumb Code    70  fsl_clock.o(i.CLOCK_BootToPeeMode)
+    CLOCK_EnablePll0                         0x0000092d   Thumb Code    86  fsl_clock.o(i.CLOCK_EnablePll0)
+    CLOCK_GetCoreSysClkFreq                  0x000009c5   Thumb Code    24  fsl_clock.o(i.CLOCK_GetCoreSysClkFreq)
+    CLOCK_GetEr32kClkFreq                    0x000009e1   Thumb Code    92  fsl_clock.o(i.CLOCK_GetEr32kClkFreq)
+    CLOCK_GetFixedFreqClkFreq                0x00000a89   Thumb Code    30  fsl_clock.o(i.CLOCK_GetFixedFreqClkFreq)
+    CLOCK_GetFllFreq                         0x00000b1d   Thumb Code    78  fsl_clock.o(i.CLOCK_GetFllFreq)
+    CLOCK_GetFreq                            0x00000b99   Thumb Code   172  fsl_clock.o(i.CLOCK_GetFreq)
+    CLOCK_GetInternalRefClkFreq              0x00000c49   Thumb Code    22  fsl_clock.o(i.CLOCK_GetInternalRefClkFreq)
+    CLOCK_GetOsc0ErClkFreq                   0x00000cf5   Thumb Code    46  fsl_clock.o(i.CLOCK_GetOsc0ErClkFreq)
+    CLOCK_GetOutClkFreq                      0x00000d91   Thumb Code    60  fsl_clock.o(i.CLOCK_GetOutClkFreq)
+    CLOCK_GetPll0Freq                        0x00000dd1   Thumb Code    72  fsl_clock.o(i.CLOCK_GetPll0Freq)
+    CLOCK_GetPllFllSelClkFreq                0x00000e69   Thumb Code    52  fsl_clock.o(i.CLOCK_GetPllFllSelClkFreq)
+    CLOCK_InitOsc0                           0x00000ea1   Thumb Code   110  fsl_clock.o(i.CLOCK_InitOsc0)
+    CLOCK_SetExternalRefClkConfig            0x00000f19   Thumb Code    34  fsl_clock.o(i.CLOCK_SetExternalRefClkConfig)
+    CLOCK_SetInternalRefClkConfig            0x00000f41   Thumb Code   166  fsl_clock.o(i.CLOCK_SetInternalRefClkConfig)
+    CLOCK_SetPbeMode                         0x00000fed   Thumb Code   108  fsl_clock.o(i.CLOCK_SetPbeMode)
+    CLOCK_SetSimConfig                       0x0000105d   Thumb Code    70  fsl_clock.o(i.CLOCK_SetSimConfig)
+    DbgConsole_Init                          0x00001171   Thumb Code   242  fsl_debug_console.o(i.DbgConsole_Init)
+    DbgConsole_Printf                        0x00001279   Thumb Code    46  fsl_debug_console.o(i.DbgConsole_Printf)
+    DbgConsole_Putchar                       0x00001541   Thumb Code    30  fsl_debug_console.o(i.DbgConsole_Putchar)
+    GPIO_PinInit                             0x0000157d   Thumb Code    78  fsl_gpio.o(i.GPIO_PinInit)
+    I2C0_DriverIRQHandler                    0x0000161d   Thumb Code    14  fsl_i2c.o(i.I2C0_DriverIRQHandler)
+    I2C1_DriverIRQHandler                    0x00001635   Thumb Code    14  fsl_i2c.o(i.I2C1_DriverIRQHandler)
+    I2C_DisableInterrupts                    0x00001675   Thumb Code    34  fsl_i2c.o(i.I2C_DisableInterrupts)
+    I2C_EnableInterrupts                     0x00001697   Thumb Code    44  fsl_i2c.o(i.I2C_EnableInterrupts)
+    I2C_GetInstance                          0x000016c5   Thumb Code    48  fsl_i2c.o(i.I2C_GetInstance)
+    I2C_MasterGetDefaultConfig               0x00001819   Thumb Code    40  fsl_i2c.o(i.I2C_MasterGetDefaultConfig)
+    I2C_MasterGetStatusFlags                 0x00001889   Thumb Code    34  fsl_i2c.o(i.I2C_MasterGetStatusFlags)
+    I2C_MasterInit                           0x000018ad   Thumb Code   140  fsl_i2c.o(i.I2C_MasterInit)
+    I2C_MasterRepeatedStart                  0x00001991   Thumb Code   104  fsl_i2c.o(i.I2C_MasterRepeatedStart)
+    I2C_MasterSetBaudRate                    0x000019fd   Thumb Code   136  fsl_i2c.o(i.I2C_MasterSetBaudRate)
+    I2C_MasterStart                          0x00001a89   Thumb Code    62  fsl_i2c.o(i.I2C_MasterStart)
+    I2C_MasterStop                           0x00001acd   Thumb Code    46  fsl_i2c.o(i.I2C_MasterStop)
+    I2C_MasterTransferCreateHandle           0x00001b01   Thumb Code    72  fsl_i2c.o(i.I2C_MasterTransferCreateHandle)
+    I2C_MasterTransferHandleIRQ              0x00001b95   Thumb Code   136  fsl_i2c.o(i.I2C_MasterTransferHandleIRQ)
+    I2C_MasterTransferNonBlocking            0x00001c61   Thumb Code    84  fsl_i2c.o(i.I2C_MasterTransferNonBlocking)
+    LPSCI_ClearStatusFlags                   0x0000224d   Thumb Code    92  fsl_lpsci.o(i.LPSCI_ClearStatusFlags)
+    LPSCI_GetDefaultConfig                   0x000022ad   Thumb Code    40  fsl_lpsci.o(i.LPSCI_GetDefaultConfig)
+    LPSCI_GetInstance                        0x00002311   Thumb Code    48  fsl_lpsci.o(i.LPSCI_GetInstance)
+    LPSCI_GetStatusFlags                     0x000023a1   Thumb Code    14  fsl_lpsci.o(i.LPSCI_GetStatusFlags)
+    LPSCI_Init                               0x000023b1   Thumb Code   372  fsl_lpsci.o(i.LPSCI_Init)
+    LPSCI_ReadBlocking                       0x00002585   Thumb Code   152  fsl_lpsci.o(i.LPSCI_ReadBlocking)
+    LPSCI_WriteBlocking                      0x0000265d   Thumb Code    54  fsl_lpsci.o(i.LPSCI_WriteBlocking)
+    SVC_Handler                              0x000027b1   Thumb Code     2  port.o(i.SVC_Handler)
+    SysTick_Handler                          0x000027b5   Thumb Code    32  port.o(i.SysTick_Handler)
+    SystemInit                               0x000027d9   Thumb Code     8  system_mkl46z4.o(i.SystemInit)
+    UART0_DriverIRQHandler                   0x000027e5   Thumb Code    16  fsl_lpsci.o(i.UART0_DriverIRQHandler)
+    UART1_DriverIRQHandler                   0x00002801   Thumb Code    16  fsl_uart.o(i.UART1_DriverIRQHandler)
+    UART2_DriverIRQHandler                   0x0000281d   Thumb Code    16  fsl_uart.o(i.UART2_DriverIRQHandler)
+    UART_GetDefaultConfig                    0x00002839   Thumb Code    40  fsl_uart.o(i.UART_GetDefaultConfig)
+    UART_GetInstance                         0x0000289d   Thumb Code    50  fsl_uart.o(i.UART_GetInstance)
+    UART_GetStatusFlags                      0x00002925   Thumb Code    14  fsl_uart.o(i.UART_GetStatusFlags)
+    UART_Init                                0x00002935   Thumb Code   274  fsl_uart.o(i.UART_Init)
+    UART_ReadBlocking                        0x00002aa9   Thumb Code   118  fsl_uart.o(i.UART_ReadBlocking)
+    UART_WriteBlocking                       0x00002b65   Thumb Code    32  fsl_uart.o(i.UART_WriteBlocking)
+    __ARM_common_switch8                     0x00002b85   Thumb Code    28  system_mkl46z4.o(i.__ARM_common_switch8)
+    __aeabi_assert                           0x00002ba1   Thumb Code    24  fsl_common.o(i.__aeabi_assert)
+    __scatterload_copy                       0x00002be5   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x00002bf3   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x00002bf5   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    main                                     0x00002e79   Thumb Code    78  freertos_hello.o(i.main)
+    pvPortMalloc                             0x00003735   Thumb Code   264  heap_4.o(i.pvPortMalloc)
+    pvTaskIncrementMutexHeldCount            0x00003851   Thumb Code    28  tasks.o(i.pvTaskIncrementMutexHeldCount)
+    pxPortInitialiseStack                    0x00003871   Thumb Code    26  port.o(i.pxPortInitialiseStack)
+    uxListRemove                             0x00003891   Thumb Code    40  list.o(i.uxListRemove)
+    vListInitialise                          0x000038b9   Thumb Code    26  list.o(i.vListInitialise)
+    vListInitialiseItem                      0x000038d3   Thumb Code     6  list.o(i.vListInitialiseItem)
+    vListInsert                              0x000038d9   Thumb Code    54  list.o(i.vListInsert)
+    vListInsertEnd                           0x0000390f   Thumb Code    24  list.o(i.vListInsertEnd)
+    vPortEnterCritical                       0x00003929   Thumb Code    22  port.o(i.vPortEnterCritical)
+    vPortExitCritical                        0x00003945   Thumb Code    36  port.o(i.vPortExitCritical)
+    vPortFree                                0x0000396d   Thumb Code   120  heap_4.o(i.vPortFree)
+    vPortYield                               0x000039ed   Thumb Code    18  port.o(i.vPortYield)
+    vQueueAddToRegistry                      0x00003a05   Thumb Code    40  queue.o(i.vQueueAddToRegistry)
+    vQueueWaitForMessageRestricted           0x00003a31   Thumb Code    64  queue.o(i.vQueueWaitForMessageRestricted)
+    vTaskDelay                               0x00003a71   Thumb Code    76  tasks.o(i.vTaskDelay)
+    vTaskMissedYield                         0x00003ac9   Thumb Code     8  tasks.o(i.vTaskMissedYield)
+    vTaskPlaceOnEventList                    0x00003ad5   Thumb Code    72  tasks.o(i.vTaskPlaceOnEventList)
+    vTaskPlaceOnEventListRestricted          0x00003b29   Thumb Code    72  tasks.o(i.vTaskPlaceOnEventListRestricted)
+    vTaskPriorityInherit                     0x00003b7d   Thumb Code   128  tasks.o(i.vTaskPriorityInherit)
+    vTaskSetTimeOutState                     0x00003c09   Thumb Code    24  tasks.o(i.vTaskSetTimeOutState)
+    vTaskStartScheduler                      0x00003c29   Thumb Code    80  tasks.o(i.vTaskStartScheduler)
+    vTaskSuspendAll                          0x00003c91   Thumb Code    12  tasks.o(i.vTaskSuspendAll)
+    vTaskSwitchContext                       0x00003ca1   Thumb Code   120  tasks.o(i.vTaskSwitchContext)
+    xPortStartScheduler                      0x00003d2d   Thumb Code    48  port.o(i.xPortStartScheduler)
+    xQueueGenericCreate                      0x00003d65   Thumb Code   112  queue.o(i.xQueueGenericCreate)
+    xQueueGenericReceive                     0x00003dd5   Thumb Code   368  queue.o(i.xQueueGenericReceive)
+    xQueueGenericReset                       0x00003f45   Thumb Code   126  queue.o(i.xQueueGenericReset)
+    xQueueGenericSend                        0x00003fc3   Thumb Code   334  queue.o(i.xQueueGenericSend)
+    xQueueGenericSendFromISR                 0x00004111   Thumb Code   178  queue.o(i.xQueueGenericSendFromISR)
+    xTaskCheckForTimeOut                     0x000041c5   Thumb Code   106  tasks.o(i.xTaskCheckForTimeOut)
+    xTaskGenericCreate                       0x00004239   Thumb Code   288  tasks.o(i.xTaskGenericCreate)
+    xTaskGetSchedulerState                   0x00004371   Thumb Code    28  tasks.o(i.xTaskGetSchedulerState)
+    xTaskGetTickCount                        0x00004395   Thumb Code     6  tasks.o(i.xTaskGetTickCount)
+    xTaskIncrementTick                       0x000043a1   Thumb Code   250  tasks.o(i.xTaskIncrementTick)
+    xTaskPriorityDisinherit                  0x000044c9   Thumb Code   124  tasks.o(i.xTaskPriorityDisinherit)
+    xTaskRemoveFromEventList                 0x00004551   Thumb Code   112  tasks.o(i.xTaskRemoveFromEventList)
+    xTaskResumeAll                           0x000045d9   Thumb Code   202  tasks.o(i.xTaskResumeAll)
+    xTimerCreateTimerTask                    0x000046c5   Thumb Code    58  timers.o(i.xTimerCreateTimerTask)
+    xTimerGenericCommand                     0x00004711   Thumb Code   110  timers.o(i.xTimerGenericCommand)
+    g_accel_address                          0x000048a0   Data           4  freertos_hello.o(.constdata)
+    g_defaultClockConfigVlpr                 0x000048a4   Data          32  clock_config.o(.constdata)
+    g_defaultClockConfigRun                  0x000048c4   Data          32  clock_config.o(.constdata)
+    Region$$Table$$Base                      0x000048e4   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00004904   Number         0  anon$$obj.o(Region$$Table)
+    Image$$RW_m_data$$Base                   0x1fffe000   Number         0  anon$$obj.o ABSOLUTE
+    SystemCoreClock                          0x1fffe000   Data           4  system_mkl46z4.o(.data)
+    g_xtal0Freq                              0x1fffe01c   Data           4  fsl_clock.o(.data)
+    g_xtal32Freq                             0x1fffe020   Data           4  fsl_clock.o(.data)
+    g_accel_addr_found                       0x1fffe034   Data           1  freertos_hello.o(.data)
+    completionFlag                           0x1fffe035   Data           1  freertos_hello.o(.data)
+    nakFlag                                  0x1fffe036   Data           1  freertos_hello.o(.data)
+    pxCurrentTCB                             0x1fffe050   Data           4  tasks.o(.data)
+    g_m_handle                               0x1fffe0a4   Data          40  freertos_hello.o(.bss)
+    xQueueRegistry                           0x200008dc   Data          64  queue.o(.bss)
+    Image$$ARM_LIB_STACK$$ZI$$Limit          0x20006000   Number         0  anon$$obj.o ABSOLUTE
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x00000411
+
+  Load Region LR_m_text (Base: 0x00000000, Size: 0x0000499c, Max: 0x00040000, ABSOLUTE)
+
+    Execution Region VECTOR_ROM (Base: 0x00000000, Size: 0x000000c0, Max: 0x00000200, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x000000c0   Data   RO            4    RESET               startup_mkl46z4.o
+
+
+    Execution Region VECTOR_RAM (Base: 0x00000000, Size: 0x00000000, Max: 0x00000000, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000000   Zero   RW            1    VECTOR_RAM.bss      anon$$obj.o
+
+
+    Execution Region ER_m_flash_config (Base: 0x00000400, Size: 0x00000010, Max: 0x00000010, ABSOLUTE, FIXED)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000400   0x00000010   Data   RO            5    FlashConfig         startup_mkl46z4.o
+
+
+    Execution Region ER_m_text (Base: 0x00000410, Size: 0x000044f4, Max: 0x0003fbf0, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000410   0x00000000   Code   RO         2460  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
+    0x00000410   0x00000004   Code   RO         2475    .ARM.Collect$$$$00000003  mc_p.l(entry4.o)
+    0x00000414   0x00000004   Code   RO         2478    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
+    0x00000418   0x00000000   Code   RO         2480    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
+    0x00000418   0x00000000   Code   RO         2482    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
+    0x00000418   0x00000008   Code   RO         2483    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
+    0x00000420   0x00000000   Code   RO         2485    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
+    0x00000420   0x00000000   Code   RO         2487    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
+    0x00000420   0x00000004   Code   RO         2476    .ARM.Collect$$$$00002714  mc_p.l(entry4.o)
+    0x00000424   0x00000070   Code   RO           71    .emb_text           port.o
+    0x00000494   0x00000094   Code   RO            6    .text               startup_mkl46z4.o
+    0x00000528   0x0000002c   Code   RO         2463    .text               mc_p.l(uidiv.o)
+    0x00000554   0x00000028   Code   RO         2465    .text               mc_p.l(idiv.o)
+    0x0000057c   0x00000024   Code   RO         2467    .text               mc_p.l(memcpya.o)
+    0x000005a0   0x00000024   Code   RO         2469    .text               mc_p.l(memseta.o)
+    0x000005c4   0x0000000e   Code   RO         2471    .text               mc_p.l(strlen.o)
+    0x000005d2   0x00000002   PAD
+    0x000005d4   0x00000024   Code   RO         2489    .text               mc_p.l(init.o)
+    0x000005f8   0x00000060   Code   RO         1538    i.BOARD_BootClockRUN  clock_config.o
+    0x00000658   0x00000068   Code   RO         1460    i.BOARD_I2C_ConfigurePins  pin_mux.o
+    0x000006c0   0x000000e0   Code   RO         1326    i.BOARD_I2C_ReleaseBus  freertos_hello.o
+    0x000007a0   0x0000003c   Code   RO         1508    i.BOARD_InitDebugConsole  board.o
+    0x000007dc   0x00000094   Code   RO         1461    i.BOARD_InitPins    pin_mux.o
+    0x00000870   0x0000008c   Code   RO          591    i.CLOCK_BootToPeeMode  fsl_clock.o
+    0x000008fc   0x00000018   Code   RO         1069    i.CLOCK_EnableClock  fsl_i2c.o
+    0x00000914   0x00000018   Code   RO         1462    i.CLOCK_EnableClock  pin_mux.o
+    0x0000092c   0x00000098   Code   RO          595    i.CLOCK_EnablePll0  fsl_clock.o
+    0x000009c4   0x0000001c   Code   RO          600    i.CLOCK_GetCoreSysClkFreq  fsl_clock.o
+    0x000009e0   0x000000a8   Code   RO          601    i.CLOCK_GetEr32kClkFreq  fsl_clock.o
+    0x00000a88   0x0000001e   Code   RO          602    i.CLOCK_GetFixedFreqClkFreq  fsl_clock.o
+    0x00000aa6   0x00000002   PAD
+    0x00000aa8   0x00000074   Code   RO          604    i.CLOCK_GetFllExtRefClkFreq  fsl_clock.o
+    0x00000b1c   0x00000058   Code   RO          605    i.CLOCK_GetFllFreq  fsl_clock.o
+    0x00000b74   0x00000024   Code   RO          606    i.CLOCK_GetFllRefClkFreq  fsl_clock.o
+    0x00000b98   0x000000b0   Code   RO          607    i.CLOCK_GetFreq     fsl_clock.o
+    0x00000c48   0x0000001c   Code   RO          608    i.CLOCK_GetInternalRefClkFreq  fsl_clock.o
+    0x00000c64   0x00000030   Code   RO          609    i.CLOCK_GetInternalRefClkSelectFreq  fsl_clock.o
+    0x00000c94   0x00000060   Code   RO          610    i.CLOCK_GetMcgExtClkFreq  fsl_clock.o
+    0x00000cf4   0x00000078   Code   RO          612    i.CLOCK_GetOsc0ErClkFreq  fsl_clock.o
+    0x00000d6c   0x00000024   Code   RO          613    i.CLOCK_GetOscRangeFromFreq  fsl_clock.o
+    0x00000d90   0x00000040   Code   RO          614    i.CLOCK_GetOutClkFreq  fsl_clock.o
+    0x00000dd0   0x00000090   Code   RO          616    i.CLOCK_GetPll0Freq  fsl_clock.o
+    0x00000e60   0x00000008   Code   RO          617    i.CLOCK_GetPll0RefFreq  fsl_clock.o
+    0x00000e68   0x00000038   Code   RO          618    i.CLOCK_GetPllFllSelClkFreq  fsl_clock.o
+    0x00000ea0   0x00000078   Code   RO          620    i.CLOCK_InitOsc0    fsl_clock.o
+    0x00000f18   0x00000028   Code   RO          624    i.CLOCK_SetExternalRefClkConfig  fsl_clock.o
+    0x00000f40   0x000000ac   Code   RO          629    i.CLOCK_SetInternalRefClkConfig  fsl_clock.o
+    0x00000fec   0x00000070   Code   RO          632    i.CLOCK_SetPbeMode  fsl_clock.o
+    0x0000105c   0x00000050   Code   RO          635    i.CLOCK_SetSimConfig  fsl_clock.o
+    0x000010ac   0x000000c4   Code   RO         1574    i.DbgConsole_ConvertRadixNumToString  fsl_debug_console.o
+    0x00001170   0x00000108   Code   RO         1577    i.DbgConsole_Init   fsl_debug_console.o
+    0x00001278   0x00000038   Code   RO         1578    i.DbgConsole_Printf  fsl_debug_console.o
+    0x000012b0   0x0000026c   Code   RO         1579    i.DbgConsole_PrintfFormattedData  fsl_debug_console.o
+    0x0000151c   0x00000024   Code   RO         1580    i.DbgConsole_PrintfPaddingCharacter  fsl_debug_console.o
+    0x00001540   0x00000024   Code   RO         1581    i.DbgConsole_Putchar  fsl_debug_console.o
+    0x00001564   0x00000018   Code   RO         1070    i.EnableIRQ         fsl_i2c.o
+    0x0000157c   0x0000008c   Code   RO          945    i.GPIO_PinInit      fsl_gpio.o
+    0x00001608   0x00000014   Code   RO         1327    i.GPIO_WritePinOutput  freertos_hello.o
+    0x0000161c   0x00000018   Code   RO         1071    i.I2C0_DriverIRQHandler  fsl_i2c.o
+    0x00001634   0x00000018   Code   RO         1072    i.I2C1_DriverIRQHandler  fsl_i2c.o
+    0x0000164c   0x00000028   Code   RO         1073    i.I2C_CheckAndClearError  fsl_i2c.o
+    0x00001674   0x00000022   Code   RO         1074    i.I2C_DisableInterrupts  fsl_i2c.o
+    0x00001696   0x0000002c   Code   RO         1076    i.I2C_EnableInterrupts  fsl_i2c.o
+    0x000016c2   0x00000002   PAD
+    0x000016c4   0x00000090   Code   RO         1077    i.I2C_GetInstance   fsl_i2c.o
+    0x00001754   0x00000098   Code   RO         1078    i.I2C_InitTransferStateMachine  fsl_i2c.o
+    0x000017ec   0x0000002c   Code   RO         1079    i.I2C_MasterClearStatusFlags  fsl_i2c.o
+    0x00001818   0x00000070   Code   RO         1081    i.I2C_MasterGetDefaultConfig  fsl_i2c.o
+    0x00001888   0x00000022   Code   RO         1082    i.I2C_MasterGetStatusFlags  fsl_i2c.o
+    0x000018aa   0x00000002   PAD
+    0x000018ac   0x000000e4   Code   RO         1083    i.I2C_MasterInit    fsl_i2c.o
+    0x00001990   0x0000006c   Code   RO         1085    i.I2C_MasterRepeatedStart  fsl_i2c.o
+    0x000019fc   0x0000008c   Code   RO         1086    i.I2C_MasterSetBaudRate  fsl_i2c.o
+    0x00001a88   0x00000044   Code   RO         1087    i.I2C_MasterStart   fsl_i2c.o
+    0x00001acc   0x00000034   Code   RO         1088    i.I2C_MasterStop    fsl_i2c.o
+    0x00001b00   0x00000094   Code   RO         1091    i.I2C_MasterTransferCreateHandle  fsl_i2c.o
+    0x00001b94   0x000000cc   Code   RO         1093    i.I2C_MasterTransferHandleIRQ  fsl_i2c.o
+    0x00001c60   0x0000009c   Code   RO         1094    i.I2C_MasterTransferNonBlocking  fsl_i2c.o
+    0x00001cfc   0x00000174   Code   RO         1095    i.I2C_MasterTransferRunStateMachine  fsl_i2c.o
+    0x00001e70   0x00000074   Code   RO         1328    i.I2C_ReadAccelRegs  freertos_hello.o
+    0x00001ee4   0x000002b4   Code   RO         1329    i.I2C_ReadAccelWhoAmI  freertos_hello.o
+    0x00002198   0x0000003c   Code   RO         1107    i.I2C_TransferCommonIRQHandler  fsl_i2c.o
+    0x000021d4   0x00000078   Code   RO         1330    i.I2C_WriteAccelReg  freertos_hello.o
+    0x0000224c   0x00000060   Code   RO          174    i.LPSCI_ClearStatusFlags  fsl_lpsci.o
+    0x000022ac   0x00000064   Code   RO          178    i.LPSCI_GetDefaultConfig  fsl_lpsci.o
+    0x00002310   0x00000090   Code   RO          180    i.LPSCI_GetInstance  fsl_lpsci.o
+    0x000023a0   0x0000000e   Code   RO          181    i.LPSCI_GetStatusFlags  fsl_lpsci.o
+    0x000023ae   0x00000002   PAD
+    0x000023b0   0x000001d4   Code   RO          182    i.LPSCI_Init        fsl_lpsci.o
+    0x00002584   0x000000d8   Code   RO          183    i.LPSCI_ReadBlocking  fsl_lpsci.o
+    0x0000265c   0x00000078   Code   RO          199    i.LPSCI_WriteBlocking  fsl_lpsci.o
+    0x000026d4   0x00000060   Code   RO         1331    i.PORT_SetPinConfig  freertos_hello.o
+    0x00002734   0x00000060   Code   RO         1463    i.PORT_SetPinConfig  pin_mux.o
+    0x00002794   0x0000001c   Code   RO         1464    i.PORT_SetPinMux    pin_mux.o
+    0x000027b0   0x00000002   Code   RO           72    i.SVC_Handler       port.o
+    0x000027b2   0x00000002   PAD
+    0x000027b4   0x00000024   Code   RO           73    i.SysTick_Handler   port.o
+    0x000027d8   0x0000000c   Code   RO           15    i.SystemInit        system_mkl46z4.o
+    0x000027e4   0x0000001c   Code   RO          201    i.UART0_DriverIRQHandler  fsl_lpsci.o
+    0x00002800   0x0000001c   Code   RO          384    i.UART1_DriverIRQHandler  fsl_uart.o
+    0x0000281c   0x0000001c   Code   RO          386    i.UART2_DriverIRQHandler  fsl_uart.o
+    0x00002838   0x00000064   Code   RO          392    i.UART_GetDefaultConfig  fsl_uart.o
+    0x0000289c   0x00000088   Code   RO          394    i.UART_GetInstance  fsl_uart.o
+    0x00002924   0x0000000e   Code   RO          395    i.UART_GetStatusFlags  fsl_uart.o
+    0x00002932   0x00000002   PAD
+    0x00002934   0x00000174   Code   RO          396    i.UART_Init         fsl_uart.o
+    0x00002aa8   0x000000bc   Code   RO          397    i.UART_ReadBlocking  fsl_uart.o
+    0x00002b64   0x00000020   Code   RO          413    i.UART_WriteBlocking  fsl_uart.o
+    0x00002b84   0x0000001c   Code   RO           38    i.__ARM_common_switch8  system_mkl46z4.o
+    0x00002ba0   0x00000044   Code   RO          905    i.__aeabi_assert    fsl_common.o
+    0x00002be4   0x0000000e   Code   RO         2493    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x00002bf2   0x00000002   Code   RO         2494    i.__scatterload_null  mc_p.l(handlers.o)
+    0x00002bf4   0x0000000e   Code   RO         2495    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x00002c02   0x00000002   PAD
+    0x00002c04   0x000001b0   Code   RO         1332    i.accelerometer_task  freertos_hello.o
+    0x00002db4   0x0000008c   Code   RO         1333    i.hello_task        freertos_hello.o
+    0x00002e40   0x00000028   Code   RO         1334    i.i2c_master_callback  freertos_hello.o
+    0x00002e68   0x00000010   Code   RO         1335    i.i2c_release_bus_delay  freertos_hello.o
+    0x00002e78   0x00000078   Code   RO         1336    i.main              freertos_hello.o
+    0x00002ef0   0x00000054   Code   RO         1967    i.prvAddCurrentTaskToDelayedList  tasks.o
+    0x00002f44   0x00000046   Code   RO         1968    i.prvAllocateTCBAndStack  tasks.o
+    0x00002f8a   0x00000002   PAD
+    0x00002f8c   0x00000078   Code   RO         2291    i.prvCheckForValidListAndQueue  timers.o
+    0x00003004   0x00000068   Code   RO         1969    i.prvCheckTasksWaitingTermination  tasks.o
+    0x0000306c   0x0000002c   Code   RO         1786    i.prvCopyDataFromQueue  queue.o
+    0x00003098   0x00000084   Code   RO         1787    i.prvCopyDataToQueue  queue.o
+    0x0000311c   0x00000012   Code   RO         1970    i.prvDeleteTCB      tasks.o
+    0x0000312e   0x00000002   PAD
+    0x00003130   0x0000002c   Code   RO         2292    i.prvGetNextExpireTime  timers.o
+    0x0000315c   0x0000007c   Code   RO         1695    i.prvHeapInit       heap_4.o
+    0x000031d8   0x00000018   Code   RO         1971    i.prvIdleTask       tasks.o
+    0x000031f0   0x0000005c   Code   RO         1972    i.prvInitialiseTCBVariables  tasks.o
+    0x0000324c   0x00000064   Code   RO         1973    i.prvInitialiseTaskLists  tasks.o
+    0x000032b0   0x00000068   Code   RO         1696    i.prvInsertBlockIntoFreeList  heap_4.o
+    0x00003318   0x00000054   Code   RO         2293    i.prvInsertTimerInActiveList  timers.o
+    0x0000336c   0x0000001c   Code   RO         1788    i.prvIsQueueEmpty   queue.o
+    0x00003388   0x0000001e   Code   RO         1789    i.prvIsQueueFull    queue.o
+    0x000033a6   0x00000002   PAD
+    0x000033a8   0x00000058   Code   RO         2294    i.prvProcessExpiredTimer  timers.o
+    0x00003400   0x000000e4   Code   RO         2295    i.prvProcessReceivedCommands  timers.o
+    0x000034e4   0x0000006c   Code   RO         2296    i.prvProcessTimerOrBlockTask  timers.o
+    0x00003550   0x00000038   Code   RO         1975    i.prvResetNextTaskUnblockTime  tasks.o
+    0x00003588   0x0000002c   Code   RO         2297    i.prvSampleTimeNow  timers.o
+    0x000035b4   0x00000028   Code   RO           74    i.prvSetupTimerInterrupt  port.o
+    0x000035dc   0x00000090   Code   RO         2298    i.prvSwitchTimerLists  timers.o
+    0x0000366c   0x00000024   Code   RO           75    i.prvTaskExitError  port.o
+    0x00003690   0x0000001a   Code   RO         2299    i.prvTimerTask      timers.o
+    0x000036aa   0x0000008a   Code   RO         1790    i.prvUnlockQueue    queue.o
+    0x00003734   0x0000011c   Code   RO         1697    i.pvPortMalloc      heap_4.o
+    0x00003850   0x00000020   Code   RO         1978    i.pvTaskIncrementMutexHeldCount  tasks.o
+    0x00003870   0x00000020   Code   RO           76    i.pxPortInitialiseStack  port.o
+    0x00003890   0x00000028   Code   RO         1750    i.uxListRemove      list.o
+    0x000038b8   0x0000001a   Code   RO         1751    i.vListInitialise   list.o
+    0x000038d2   0x00000006   Code   RO         1752    i.vListInitialiseItem  list.o
+    0x000038d8   0x00000036   Code   RO         1753    i.vListInsert       list.o
+    0x0000390e   0x00000018   Code   RO         1754    i.vListInsertEnd    list.o
+    0x00003926   0x00000002   PAD
+    0x00003928   0x0000001c   Code   RO           78    i.vPortEnterCritical  port.o
+    0x00003944   0x00000028   Code   RO           79    i.vPortExitCritical  port.o
+    0x0000396c   0x00000080   Code   RO         1698    i.vPortFree         heap_4.o
+    0x000039ec   0x00000018   Code   RO           80    i.vPortYield        port.o
+    0x00003a04   0x0000002c   Code   RO         1796    i.vQueueAddToRegistry  queue.o
+    0x00003a30   0x00000040   Code   RO         1800    i.vQueueWaitForMessageRestricted  queue.o
+    0x00003a70   0x00000058   Code   RO         1986    i.vTaskDelay        tasks.o
+    0x00003ac8   0x0000000c   Code   RO         1990    i.vTaskMissedYield  tasks.o
+    0x00003ad4   0x00000054   Code   RO         1992    i.vTaskPlaceOnEventList  tasks.o
+    0x00003b28   0x00000054   Code   RO         1993    i.vTaskPlaceOnEventListRestricted  tasks.o
+    0x00003b7c   0x0000008c   Code   RO         1995    i.vTaskPriorityInherit  tasks.o
+    0x00003c08   0x00000020   Code   RO         1999    i.vTaskSetTimeOutState  tasks.o
+    0x00003c28   0x00000068   Code   RO         2000    i.vTaskStartScheduler  tasks.o
+    0x00003c90   0x00000010   Code   RO         2002    i.vTaskSuspendAll   tasks.o
+    0x00003ca0   0x0000008c   Code   RO         2003    i.vTaskSwitchContext  tasks.o
+    0x00003d2c   0x00000038   Code   RO           81    i.xPortStartScheduler  port.o
+    0x00003d64   0x00000070   Code   RO         1803    i.xQueueGenericCreate  queue.o
+    0x00003dd4   0x00000170   Code   RO         1804    i.xQueueGenericReceive  queue.o
+    0x00003f44   0x0000007e   Code   RO         1805    i.xQueueGenericReset  queue.o
+    0x00003fc2   0x0000014e   Code   RO         1806    i.xQueueGenericSend  queue.o
+    0x00004110   0x000000b2   Code   RO         1807    i.xQueueGenericSendFromISR  queue.o
+    0x000041c2   0x00000002   PAD
+    0x000041c4   0x00000074   Code   RO         2004    i.xTaskCheckForTimeOut  tasks.o
+    0x00004238   0x00000138   Code   RO         2005    i.xTaskGenericCreate  tasks.o
+    0x00004370   0x00000024   Code   RO         2009    i.xTaskGetSchedulerState  tasks.o
+    0x00004394   0x0000000c   Code   RO         2010    i.xTaskGetTickCount  tasks.o
+    0x000043a0   0x00000128   Code   RO         2012    i.xTaskIncrementTick  tasks.o
+    0x000044c8   0x00000088   Code   RO         2015    i.xTaskPriorityDisinherit  tasks.o
+    0x00004550   0x00000088   Code   RO         2016    i.xTaskRemoveFromEventList  tasks.o
+    0x000045d8   0x000000ec   Code   RO         2018    i.xTaskResumeAll    tasks.o
+    0x000046c4   0x0000004c   Code   RO         2303    i.xTimerCreateTimerTask  timers.o
+    0x00004710   0x00000074   Code   RO         2304    i.xTimerGenericCommand  timers.o
+    0x00004784   0x0000000c   Data   RO          202    .constdata          fsl_lpsci.o
+    0x00004790   0x0000001c   Data   RO          416    .constdata          fsl_uart.o
+    0x000047ac   0x00000060   Data   RO          637    .constdata          fsl_clock.o
+    0x0000480c   0x00000094   Data   RO         1108    .constdata          fsl_i2c.o
+    0x000048a0   0x00000004   Data   RO         1338    .constdata          freertos_hello.o
+    0x000048a4   0x00000040   Data   RO         1540    .constdata          clock_config.o
+    0x000048e4   0x00000020   Data   RO         2491    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_m_data (Base: 0x1fffe000, Size: 0x00002a0c, Max: 0x00007800, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x1fffe000   0x00000004   Data   RW           16    .data               system_mkl46z4.o
+    0x1fffe004   0x00000004   Data   RW           82    .data               port.o
+    0x1fffe008   0x00000008   Data   RW          203    .data               fsl_lpsci.o
+    0x1fffe010   0x00000004   Data   RW          417    .data               fsl_uart.o
+    0x1fffe014   0x00000010   Data   RW          638    .data               fsl_clock.o
+    0x1fffe024   0x00000010   Data   RW         1109    .data               fsl_i2c.o
+    0x1fffe034   0x00000003   Data   RW         1339    .data               freertos_hello.o
+    0x1fffe037   0x00000001   PAD
+    0x1fffe038   0x00000018   Data   RW         1703    .data               heap_4.o
+    0x1fffe050   0x00000038   Data   RW         2021    .data               tasks.o
+    0x1fffe088   0x00000010   Data   RW         2307    .data               timers.o
+    0x1fffe098   0x0000000c   Zero   RW          415    .bss                fsl_uart.o
+    0x1fffe0a4   0x00000028   Zero   RW         1337    .bss                freertos_hello.o
+    0x1fffe0cc   0x00000010   Zero   RW         1587    .bss                fsl_debug_console.o
+    0x1fffe0dc   0x00002800   Zero   RW         1702    .bss                heap_4.o
+    0x200008dc   0x00000040   Zero   RW         1815    .bss                queue.o
+    0x2000091c   0x000000c8   Zero   RW         2020    .bss                tasks.o
+    0x200009e4   0x00000028   Zero   RW         2306    .bss                timers.o
+
+
+    Execution Region ARM_LIB_HEAP (Base: 0x20000a0c, Size: 0x00000400, Max: 0x00000400, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000a0c   0x00000400   Zero   RW            2    ARM_LIB_HEAP.bss    anon$$obj.o
+
+
+    Execution Region ARM_LIB_STACK (Base: 0x20005c00, Size: 0x00000400, Max: 0x00000400, ABSOLUTE)
+
+    Base Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20005c00   0x00000400   Zero   RW            3    ARM_LIB_STACK.bss   anon$$obj.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+        60          8          0          0          0       6844   board.o
+        96         24         64          0          0       7787   clock_config.o
+      2016        742          4          3         40     293097   freertos_hello.o
+      2058        556         96         16          0      29058   fsl_clock.o
+        68         44          0          0          0        701   fsl_common.o
+      1208         38          0          0         16      17497   fsl_debug_console.o
+       140         62          0          0          0       2571   fsl_gpio.o
+      2236        556        148         16          0      29457   fsl_i2c.o
+      1186        398         12          8          0      26301   fsl_lpsci.o
+       898        338         28          4         12       9836   fsl_uart.o
+       640         60          0         24      10240       4779   heap_4.o
+       150          0          0          0          0       3682   list.o
+       400        104          0          0          0      10726   pin_mux.o
+       406         58          0          4          0      18650   port.o
+      1598          4          0          0         64      16233   queue.o
+       148         68        208          0          0       1292   startup_mkl46z4.o
+        40          4          0          4          0     280195   system_mkl46z4.o
+      2560        358          0         56        200      25364   tasks.o
+      1078        112          0         16         40      10095   timers.o
+
+    ----------------------------------------------------------------------
+     17008       3534        592        152      12660     794165   Object Totals
+         0          0         32          0       2048          0   (incl. Generated)
+        22          0          0          1          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         8          4          0          0          0          0   entry4.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        30          0          0          0          0          0   handlers.o
+        40          0          0          0          0         72   idiv.o
+        36          8          0          0          0         68   init.o
+        36          0          0          0          0         60   memcpya.o
+        36          0          0          0          0        100   memseta.o
+        14          0          0          0          0         60   strlen.o
+        44          0          0          0          0         72   uidiv.o
+
+    ----------------------------------------------------------------------
+       260         16          0          0          0        432   Library Totals
+         4          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       256         16          0          0          0        432   mc_p.l
+
+    ----------------------------------------------------------------------
+       260         16          0          0          0        432   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+     17268       3550        592        152      12660     787877   Grand Totals
+     17268       3550        592        152      12660     787877   ELF Image Totals
+     17268       3550        592        152          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                17860 (  17.44kB)
+    Total RW  Size (RW Data + ZI Data)             12812 (  12.51kB)
+    Total ROM Size (Code + RO Data + RW Data)      18012 (  17.59kB)
+
+==============================================================================
+

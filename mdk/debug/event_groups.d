@@ -1,0 +1,15 @@
+debug\event_groups.o: ../../../../../rtos/freertos_8.2.3/Source/event_groups.c
+debug\event_groups.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+debug\event_groups.o: ../../../../../rtos/freertos_8.2.3/Source/include/FreeRTOS.h
+debug\event_groups.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+debug\event_groups.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+debug\event_groups.o: ..\FreeRTOSConfig.h
+debug\event_groups.o: ../../../../../rtos/freertos_8.2.3/Source/include/projdefs.h
+debug\event_groups.o: ../../../../../rtos/freertos_8.2.3/Source/include/portable.h
+debug\event_groups.o: ../../../../../rtos/freertos_8.2.3/Source/include/deprecated_definitions.h
+debug\event_groups.o: ../../../../../rtos/freertos_8.2.3/Source/portable/RVDS/ARM_CM0/portmacro.h
+debug\event_groups.o: ../../../../../rtos/freertos_8.2.3/Source/include/mpu_wrappers.h
+debug\event_groups.o: ../../../../../rtos/freertos_8.2.3/Source/include/task.h
+debug\event_groups.o: ../../../../../rtos/freertos_8.2.3/Source/include/list.h
+debug\event_groups.o: ../../../../../rtos/freertos_8.2.3/Source/include/timers.h
+debug\event_groups.o: ../../../../../rtos/freertos_8.2.3/Source/include/event_groups.h
